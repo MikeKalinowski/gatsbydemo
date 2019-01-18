@@ -1,0 +1,22 @@
+.mainDiv {
+	background: lightblue;
+	height: 80px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0px 20px;
+}
+
+.mainDiv a {
+	text-decoration: none;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 28px;
+	letter-spacing: 0.1px;
+	color: #333333;
+}
+
+.green {
+	color: #35CC62
+}
