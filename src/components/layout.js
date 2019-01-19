@@ -18,13 +18,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 375,
-            paddingTop: 0,
-          }}
-        >
+        <div className="biggestDiv">
           <Header type="mobile" />
           {children}
           <footer>

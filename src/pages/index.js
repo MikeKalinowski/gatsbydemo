@@ -3,6 +3,8 @@ import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
 import Hero from '../components/hero'
+import ShowYourWork from '../components/showYourWork'
+import Title from '../components/title'
 import Image from '../components/image'
 import SEO from '../components/seo'
 import '../components/fonts.css';
@@ -14,10 +16,13 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <Hero />
-    <div>Show Your Work1</div>
+    <ShowYourWork>
+      <Title />
+    </ShowYourWork>
     <div>Accordions</div>
+    <Title />
     <div>Our Work Flow</div>
-    <div>Show your work - cards</div>
+    <div>Our Offer</div>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>

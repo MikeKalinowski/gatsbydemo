@@ -5,7 +5,7 @@ import React from 'react'
 import './header.css'
 
 const Header = ({ type }) => (
-  <div className="mainDiv">
+  <div className="headerDiv">
     <div>
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="2" y="5" width="20" height="14">

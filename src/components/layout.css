@@ -1,3 +1,9 @@
 body {
   margin: 0;
 }
+
+.biggestDiv {
+  margin: 0px auto;
+  max-width: 375px;
+  padding-top: 0px;
+}
