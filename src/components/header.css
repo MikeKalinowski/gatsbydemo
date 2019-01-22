@@ -12,19 +12,71 @@
 	z-index: 999;
 }
 
-.headerDiv a {
+.headerDiv .logoName a {
 	text-decoration: none;
 	font-style: normal;
 	font-weight: 500;
 	font-size: 28px;
 	letter-spacing: 0.1px;
+	color: inherit;
 }
 
-.icon {
+.headerDiv .icon {
 	cursor: pointer;
+	position: relative;
 }
 
-.green {
+.headerDiv .icon svg {
+	cursor: pointer;
+	position: relative;
+	z-index: 2;
+}
+
+.headerDiv .green {
 	color: #35CC62
 }
 
+/*HAMBURGER MAGIC*/
+.headerDiv .icon input { /*Checkbox that goes over hamburger icon*/
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	top: -2px;
+	left: -2px;
+	cursor: pointer;
+	opacity: 0;
+	z-index: 3;
+	-webkit-touch-callout: none;
+}
+
+.icon ul
+{
+  position: absolute;
+  width: 160px;
+  margin: -350px 0 0 -24px;
+  padding: 100px 50px 40px 26px;
+  background: #ddd;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  z-order: -1000;
+  transition: all 0.5s cubic-bezier(0.8,0.2,0.05,1.0);
+}
+
+.icon ul li
+{
+  padding: 8px 0;
+}
+
+.icon input:checked ~ ul
+{
+  margin-top: -80px;
+}
+
+.icon a {
+	text-decoration: none;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	letter-spacing: 0.1px;
+	color: inherit;
+}
