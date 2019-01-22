@@ -1,0 +1,36 @@
+.footerWrapper {
+	margin: 80px 21px 0 21px;
+}
+
+.footerWrapper .dotTitle {
+	display: flex;
+}
+
+.footerWrapper .dot .title {
+	color: #29CE5D;
+}
+
+.footerWrapper .smallTitle {
+margin-top: 40px;
+font-style: normal;
+font-weight: 500;
+line-height: 23px;
+font-size: 14px;
+letter-spacing: 1.4px;
+text-transform: uppercase;
+}
+
+.footerWrapper .text {
+margin-top: 10px;
+font-family: Open Sans;
+font-style: normal;
+font-weight: normal;
+line-height: 26px;
+font-size: 16px;
+letter-spacing: 0.1px;
+color: #878787
+}
+
+.footerWrapper .greenButton {
+	margin-bottom: 40px;
+}

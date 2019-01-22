@@ -14,14 +14,17 @@
 
 .headerDiv a {
 	text-decoration: none;
-	font-family: Montserrat;
 	font-style: normal;
 	font-weight: 500;
 	font-size: 28px;
 	letter-spacing: 0.1px;
-	color: #333333;
+}
+
+.icon {
+	cursor: pointer;
 }
 
 .green {
 	color: #35CC62
 }
+

@@ -4,9 +4,9 @@ import React from 'react'
 
 import './title.css'
 
-const Title = () => (
-  <div>
-    TITLE
+const Title = ({ titleText }) => (
+  <div className="title">
+    {titleText}
   </div>
 )
 

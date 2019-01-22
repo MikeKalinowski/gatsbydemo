@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
+import Footer from './footer'
 import './layout.css'
 
 const Layout = ({ children }) => (
@@ -19,11 +20,9 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <div className="biggestDiv">
-          <Header type="mobile" />
+          <Header />
           {children}
-          <footer>
-            Built by MikeKalinowski
-          </footer>
+          <Footer />
         </div>
       </>
     )}

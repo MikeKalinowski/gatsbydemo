@@ -1,0 +1,22 @@
+.accordion {
+	margin-top: 32px;
+	cursor: pointer;
+	position: relative;
+}
+
+.accordion .icon {
+	margin-right: 10px;
+}
+
+.accordion .closingArrow {
+	position: absolute;
+	right: 10px;
+}
+
+.accordion .accordionTitle {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 12px;
+	font-size: 16px;
+}

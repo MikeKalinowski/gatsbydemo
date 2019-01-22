@@ -5,7 +5,7 @@ import React from 'react'
 import './hero.css'
 
 const Hero = () => (
-  <div className="heroBackground">
+  <div className="heroWrapper">
   	<div className="heroInsideWrapper">
   		<div className="playButton centerAbsolute">
   			<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
