@@ -28,3 +28,27 @@
 	line-height: 12px;
 	font-size: 16px;
 }
+
+.accordionText {
+	display: none;
+	margin-top: 12px;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 26px;
+	font-size: 14px;
+	letter-spacing: 0.1px;
+	color: #666666;
+}
+
+.accordionTextVisible {
+	display: block;
+}
+
+.accordionClicked .accordionTitle{
+	color: #35CC62
+}
+
+.accordionClicked path{
+	fill: #35CC62
+}

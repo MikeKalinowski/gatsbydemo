@@ -6,7 +6,7 @@ const Card = ({title, text, icon}) => (
   <div className="card">
     <div className="cardIcon">
     	<svg className="icon" width="32" height="32">
-    			<path fill-rule="evenodd" clip-rule="evenodd" d={icon} fill="#666666"/>
+    			<path fillRule="evenodd" clipRule="evenodd" d={icon} fill="#666666"/>
     	</svg>
     </div>
     <div>
