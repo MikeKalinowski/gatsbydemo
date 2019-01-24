@@ -31,6 +31,8 @@
 
 .accordionText {
 	display: none;
+	overflow: hidden;
+	max-height: 0px;
 	margin-top: 12px;
 	font-family: Open Sans;
 	font-style: normal;
@@ -43,6 +45,22 @@
 
 .accordionTextVisible {
 	display: block;
+	animation: Slide;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+	animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes Slide {
+  0% {
+    opacity: 0;
+    max-height: 0px;
+    ;
+  }
+  100%{
+    opacity: 1;
+    max-height: 400px;
+  }
 }
 
 .accordionClicked .accordionTitle{

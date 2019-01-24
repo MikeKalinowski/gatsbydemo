@@ -13,16 +13,19 @@ const Header = () => (
       <input type="checkbox" />
       <ul>
        <li>
-        <a href="http://www.google.com">Show your work</a>
+        <a href="/">Home</a>
        </li>
        <li>
-        <a href="http://www.google.com">Our work flow</a>
+        <a href="/">Pages</a>
        </li>
        <li>
-        <a href="http://www.google.com">Our offer</a>
+        <a href="/">Work</a>
        </li>
        <li>
-        <a href="http://www.google.com">Contact</a>
+        <a href="/">Blog</a>
+       </li>
+       <li>
+        <a href="/">About</a>
        </li>
       </ul>
     </div>
