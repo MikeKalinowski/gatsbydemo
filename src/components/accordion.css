@@ -1,56 +1,3 @@
-.accordion {
-	margin-top: 32px;
-	cursor: pointer;
-	position: relative;
-}
-
-.accordion:hover .accordionTitle {
-	color: #35CC62
-}
-
-.accordion:hover path {
-	fill: #35CC62;
-}
-
-.accordion .icon {
-	margin-right: 10px;
-}
-
-.accordion .closingArrow {
-	position: absolute;
-	right: 10px;
-}
-
-.accordion .accordionTitle {
-	font-family: Montserrat;
-	font-style: normal;
-	font-weight: normal;
-	line-height: 12px;
-	font-size: 16px;
-}
-
-.accordionText {
-	display: none;
-	overflow: hidden;
-	max-height: 0px;
-	margin-top: 12px;
-	font-family: Open Sans;
-	font-style: normal;
-	font-weight: normal;
-	line-height: 26px;
-	font-size: 14px;
-	letter-spacing: 0.1px;
-	color: #666666;
-}
-
-.accordionTextVisible {
-	display: block;
-	animation: Slide;
-	animation-duration: 2s;
-	animation-fill-mode: forwards;
-	animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
 @keyframes Slide {
   0% {
     opacity: 0;
@@ -61,12 +8,4 @@
     opacity: 1;
     max-height: 400px;
   }
-}
-
-.accordionClicked .accordionTitle{
-	color: #35CC62
-}
-
-.accordionClicked path{
-	fill: #35CC62
 }
