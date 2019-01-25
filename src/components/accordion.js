@@ -1,9 +1,6 @@
 // import { Link } from 'gatsby'
 import React from 'react'
-import styled from 'styled-components'
-
-import './accordion.css'
-
+import styled, { css, keyframes } from 'styled-components'
 
 const AccordionWrapper = styled.div`
 	margin-top: 32px;
@@ -36,15 +33,33 @@ const ClosingArrowSvg = styled.svg`
 	right: 10px;
 `
 
-const AccordionTitle = styled.span`
+const Title = styled.span`
 	font-family: Montserrat;
 	font-style: normal;
 	font-weight: normal;
 	line-height: 12px;
 	font-size: 16px;
 `
+const slide = keyframes`
+	0% {
+	  opacity: 0;
+	  max-height: 0px;
+	}
+	100% {
+	  opacity: 1;
+	  max-height: 400px;
+	}
+`
+const animationMixin = props =>
+	css`
+		display: block;
+		animation: ${slide};
+		animation-duration: 2s;
+		animation-fill-mode: forwards;
+		animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+		`
 
-const AccordionText = styled.div`
+const Text = styled.div`
 	display: none;
 	overflow: hidden;
 	max-height: 0px;
@@ -56,13 +71,7 @@ const AccordionText = styled.div`
 	font-size: 14px;
 	letter-spacing: 0.1px;
 	color: #666666;
-	${props => props.clicked && `
-	    display: block;
-	    animation: Slide;
-	    animation-duration: 2s;
-	    animation-fill-mode: forwards;
-	    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
-	`}
+	${props => props.clicked && animationMixin}
 `
 
 class Accordion extends React.Component {
@@ -89,41 +98,19 @@ class Accordion extends React.Component {
 					<IconSvg width="14" height="14"> 
 							<path fillRule="evenodd" clipRule="evenodd" d={this.props.accordionIcon} fill="#333333"/>
 					</IconSvg>
-					<AccordionTitle className="accordionTitle">
+					<Title className="accordionTitle">
 						{this.props.accordionTitle}
-					</AccordionTitle>
+					</Title>
 					<ClosingArrowSvg width="16" height="16" onClick={this.handleClick}>
 						<path fillRule="evenodd" clipRule="evenodd" d={this.state.clicked ? this.arrowIconClicked : this.arrowIconNotClicked} fill="black" fillOpacity="0.2"/>
 					</ClosingArrowSvg>
 				</AccordionWrapper>
-				<AccordionText clicked={this.state.clicked}>
+				<Text clicked={this.state.clicked}>
 				{this.props.accordionText}
-				</AccordionText>
+				</Text>
 			</div>
 		)
 	}
 }
 
 export default Accordion
-
-// 
-// render() {
-// 	return(
-// 		<div>
-// 			<div className={this.state.clicked ? "accordion accordionClicked" : "accordion"} onClick={this.handleClick}>
-// 				<IconSvg width="14" height="14"> 
-// 						<path fillRule="evenodd" clipRule="evenodd" d={this.props.accordionIcon} fill="#333333"/>
-// 				</IconSvg>
-// 				<AccordionTitle className="accordionTitle">
-// 					{this.props.accordionTitle}
-// 				</AccordionTitle>
-// 				<ClosingArrowSvg width="16" height="16" onClick={this.handleClick}>
-// 					<path fillRule="evenodd" clipRule="evenodd" d={this.state.clicked ? this.arrowIconClicked : this.arrowIconNotClicked} fill="black" fillOpacity="0.2"/>
-// 				</ClosingArrowSvg>
-// 			</div>
-// 			<div className={this.state.clicked ? "accordionText accordionTextVisible" : "accordionText"}>
-// 			{this.props.accordionText}
-// 			</div>
-// 		</div>
-// 	)
-// }

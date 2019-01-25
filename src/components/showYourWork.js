@@ -4,17 +4,36 @@ import React from 'react'
 import Title from './title'
 import GreenButton from './greenButton'
 import Accordion from './accordion'
+import styled from 'styled-components'
 
-import './showYourWork.css'
+const ShowYourWorkWrapper = styled.div`
+  margin: 80px 21px 0 21px;
+`
+
+const Text = styled.div`
+  margin-top: 20px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 26px;
+  font-size: 16px;
+  letter-spacing: 0.1px;
+  color: #666666;
+`
+
+const AccordionsWrapper = styled.div`
+  margin-top: 80px;
+`
+
 
 const ShowYourWork = () => (
-  <div className="showYourWorkWrapper">
+  <ShowYourWorkWrapper>
     <Title titleText="Show Your Work"/>
-    <div className="normalText">
+    <Text>
       Lorem ipsum dolor sit amet, consectetur adipisicing, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    </div>
+    </Text>
     <GreenButton buttonText="READ MORE"/>
-    <div className="accordionsWrapper">
+    <AccordionsWrapper>
     <Accordion 
       accordionTitle="Explore Multipurpose The Me" 
       accordionText="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris niesi ut aliquip ex ea commodo consequat.sed do eiusmod tempor incididunt ut exercitation ullamco laboris quis  labore et doliore magna aliqua. 1"  
@@ -35,8 +54,8 @@ const ShowYourWork = () => (
       accordionText="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris niesi ut aliquip ex ea commodo consequat.sed do eiusmod tempor incididunt ut exercitation ullamco laboris quis  labore et doliore magna aliqua. 4" 
       accordionIcon="M7.87848 2.6775V0H8.75261V2.67838C8.46211 2.63638 8.16811 2.63637 7.87848 2.6775ZM10.1906 3.30051C10.287 3.37256 10.3835 3.4447 10.4712 3.5324C10.5577 3.61892 10.6287 3.71385 10.6997 3.80885L10.7345 3.85528L13.1268 1.46302L12.5432 0.878525L10.1509 3.27078L10.1906 3.30051ZM11.3251 5.25085C11.3671 5.54135 11.3671 5.83448 11.326 6.12498H14.0026V5.25085H11.3251ZM5.92163 3.80179C5.99124 3.70923 6.06101 3.61646 6.14508 3.5324C6.2264 3.45108 6.31515 3.38405 6.40394 3.31698L6.40402 3.31692L6.40405 3.31689L6.40409 3.31687C6.42511 3.30099 6.44614 3.2851 6.46708 3.26903L4.07658 0.878525L3.49208 1.46302L5.88258 3.85353L5.92163 3.80179ZM5.29021 6.12498H2.62759V5.25085H5.29196C5.24909 5.54135 5.24909 5.83448 5.29021 6.12498ZM6.46687 8.12242C6.35654 8.04083 6.2455 7.95872 6.14512 7.85834C6.03836 7.75158 5.95227 7.63362 5.86548 7.51472L5.86338 7.51184L0 13.3743L0.62825 14.0026L4.14663 10.4842L6.49075 8.14009L6.46687 8.12242ZM8.75159 8.71155V11.3759H7.87747V8.7133C8.16797 8.75442 8.46197 8.75442 8.75159 8.71155ZM10.6928 7.591C10.6239 7.68262 10.5549 7.77439 10.471 7.85836C10.3876 7.94169 10.2956 8.01072 10.2038 8.0796C10.1866 8.09246 10.1695 8.1053 10.1525 8.11824L12.543 10.5087L13.1266 9.92424L10.7361 7.53374C10.7216 7.55277 10.7072 7.57188 10.6928 7.591Z"
     />
-    </div>
-  </div>
+    </AccordionsWrapper>
+  </ShowYourWorkWrapper>
 )
 
 export default ShowYourWork

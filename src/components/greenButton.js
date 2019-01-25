@@ -25,14 +25,12 @@ const StyledGreenButton = styled.button`
 		background: #FFFFFF;
 		border: 1px solid #35CC62;
 		transform: translateY(-3px);
-
 		color: #35CC62;
 	}
-
 `
 
-const GreenButton = ({ buttonText }) => (
-	<StyledGreenButton>
+const GreenButton = ({ className, buttonText }) => (
+	<StyledGreenButton className={className}>
 		{buttonText}
 	</StyledGreenButton>
 )

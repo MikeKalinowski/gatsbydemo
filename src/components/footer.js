@@ -3,8 +3,6 @@ import Title from './title'
 import GreenButton from './greenButton'
 import styled from 'styled-components'
 
-import './footer.css'
-
 const FooterWrapper = styled.div`
     margin: 80px 21px 0 21px;
 `
@@ -34,8 +32,12 @@ letter-spacing: 0.1px;
 color: #878787
 `
 
-const StyledGreenButton = styled.div`
-    margin: 20px 0px 40px 0px;
+const StyledTitle = styled(Title)`
+    color: #29CE5D;
+`
+
+const StyledGreenButton = styled(GreenButton)`
+    margin: 40px 0px 40px 0px;
 `
 
 const Footer = () => (
@@ -43,7 +45,7 @@ const Footer = () => (
     <DotTitle>
 	    <Title titleText="Creation"/>
 	    <span className="dot">
-	    	<Title titleText="."/>
+	    	<StyledTitle titleText="."/>
 	    </span>
     </DotTitle>
     <SmallTitle>
@@ -58,9 +60,7 @@ const Footer = () => (
     <Text>
     Duis aute irure dolor in repre henderit in  iste natus esse.
     </Text>
-    <StyledGreenButton>
-        <GreenButton buttonText="CONTACT US"/>
-    </StyledGreenButton>
+    <StyledGreenButton buttonText="CONTACT US"/>
   </FooterWrapper>
 )
 
