@@ -4,6 +4,7 @@ module.exports = {
     description: `Demoing Gatsby`,
     author: `@gatsbyjs`,
   },
+  pathPrefix: "/reponame",
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
@@ -15,6 +16,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
