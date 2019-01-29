@@ -16,9 +16,6 @@ const HeaderInsideWrapper = styled.div`
 	max-width: 1200px;
 	padding: 0 40px;
 	box-sizing: border-box;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
 	position: relative;
 	top: 50%;
 	left: 50%;
@@ -26,9 +23,15 @@ const HeaderInsideWrapper = styled.div`
 `
 
 const Logo = styled.div`
+	display: inline-block;
 `
 
 const Links = styled.div`
+	display: inline-block;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%)
 `
 
 const List = styled.ul`
@@ -43,6 +46,11 @@ const ListItem = styled.li`
 `
 
 const Icons = styled.div`
+	display: inline-block;
+	position: absolute;
+	right: 0px;
+	top: 50%;
+	transform: translate(0%, -50%)
 `
 
 const StyledLink = styled(Link)`
@@ -71,16 +79,16 @@ const HeaderBig = () => (
 	  		    <path fillRule="evenodd" clipRule="evenodd" d="M26.2098 5.03217C23.4623 1.94478 19.4583 0 15 0C6.71573 0 0 6.71492 0 14.9982C0 17.7311 0.731057 20.2934 2.00831 22.5C1.92046 21.8868 1.875 21.26 1.875 20.6225C1.875 13.3746 7.75126 7.49909 15 7.49909C17.3286 7.4991 19.4093 8.56015 20.7849 10.2251C21.4752 10.9304 22.4359 11.3736 23.5 11.3736C25.5711 11.3736 27.25 9.6949 27.25 7.62408C27.25 6.80019 26.9842 6.03836 26.5338 5.41962C26.5092 5.37893 26.2937 5.11985 26.2098 5.03217Z" fill="url(#paint2_linear)"/>
 	  		    <defs>
 	  		    <linearGradient id="paint0_linear" x1="27.25" y1="15" x2="7.5" y2="15" gradientUnits="userSpaceOnUse">
-	  		    <stop stop-opacity="0.6"/>
-	  		    <stop offset="1" stop-opacity="0.1"/>
+	  		    <stop stopOpacity="0.6"/>
+	  		    <stop offset="1" stopOpacity="0.1"/>
 	  		    </linearGradient>
 	  		    <linearGradient id="paint1_linear" x1="26.1978" y1="21.7984" x2="9.77471" y2="5.85375" gradientUnits="userSpaceOnUse">
-	  		    <stop stop-opacity="0.6"/>
-	  		    <stop offset="1" stop-opacity="0.1"/>
+	  		    <stop stopOpacity="0.6"/>
+	  		    <stop offset="1" stopOpacity="0.1"/>
 	  		    </linearGradient>
 	  		    <linearGradient id="paint2_linear" x1="7.39301" y1="27.9041" x2="32.0275" y2="11.7154" gradientUnits="userSpaceOnUse">
-	  		    <stop stop-opacity="0.5"/>
-	  		    <stop offset="1" stop-opacity="0.1"/>
+	  		    <stop stopOpacity="0.5"/>
+	  		    <stop offset="1" stopOpacity="0.1"/>
 	  		    </linearGradient>
 	  		    </defs>	
 	  		</svg>

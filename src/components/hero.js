@@ -3,11 +3,15 @@ import React from 'react'
 import styled from 'styled-components'
 
 import './hero.css'
-import backgroundImg from '../images/backgroundMobile.png';
+import BackgroundImage from './heroBackgroundImage.js'
+import { device } from './device'
 
 const HeroWrapper = styled.div`
-  background: url(${backgroundImg});
   height: 526px;
+
+  @media (min-width: 700px) {
+      height: 100vh;
+    }
 `
 
 const HeroInsideWrapper = styled.div`
@@ -19,6 +23,9 @@ const HeroInsideWrapper = styled.div`
 const PlayButtonIcon = styled.div`
   position: absolute;
   top: 170px;
+  @media ${device.laptop} {
+      top: calc(50% - 50px);
+    }
 `
 
 const Svg = styled.svg`
@@ -37,6 +44,17 @@ const WatchVideoText = styled.div`
   text-transform: uppercase;
   text-shadow: 0px 4.94792px 9.89583px rgba(0, 0, 0, 0.2);
   color: #FFFFFF;
+  @media ${device.laptop} {
+      top: calc(50% + 100px);
+      line-height: 19px;
+      font-size: 16px;
+      text-align: center;
+      letter-spacing: 16px;
+      text-transform: uppercase;
+  }
+  @media ${device.laptopL} {
+      top: calc(50% + 150px);
+  }
 `
 
 const HeroText = styled.div`
@@ -49,11 +67,32 @@ const HeroText = styled.div`
   text-align: center;
   width: 280px;
   color: #FFFFFF;
+  @media screen and ${device.laptop} {
+      top: calc(50% + 144px);
+      font-style: normal;
+      font-weight: normal;
+      line-height: 40px;
+      font-size: 32px;
+      text-align: center;
+      width: 70%;
+      max-width: 800px;
+  }
+  @media screen and ${device.laptopL} {
+      top: calc(50% + 194px);
+  } 
 `
 
 const ArrowIcon = styled.div`
   position: absolute;
   bottom: 20px;
+`
+
+const StyledBackgroundImage = styled(BackgroundImage)`
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 `
 
 const Hero = () => (
@@ -78,6 +117,7 @@ const Hero = () => (
     			<path fillRule="evenodd" clipRule="evenodd" d="M18.9289 0.735476L9.99543 10.7625C9.90001 10.916 9.72811 10.994 9.55027 10.9991C9.48343 11.0016 9.46717 11.0028 9.45059 10.9991C9.27264 10.994 9.10085 10.916 9.00531 10.7625L0.0714628 0.735476C-0.0758292 0.501452 0.0118468 0.200718 0.267515 0.0660937C0.522355 -0.0698043 0.848288 0.0107237 0.995925 0.244762L9.50004 9.7924L18.0055 0.244762C18.1525 0.0107237 18.4784 -0.0698043 18.7333 0.0660937C18.989 0.200718 19.0765 0.501452 18.9289 0.735476Z" fill="white" fillOpacity="0.5"/>
   			</svg>
   		</ArrowIcon>
+      <StyledBackgroundImage />
   	</HeroInsideWrapper>
   </HeroWrapper>
 )

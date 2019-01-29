@@ -31,7 +31,7 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <MainWrapper>
-          <MediaQuery minWidth={800}>
+          <MediaQuery minWidth={940}>
             {(matches) => {
               if (matches) {
                 return <HeaderBig />;

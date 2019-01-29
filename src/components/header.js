@@ -27,7 +27,6 @@ const StyledLink = styled(Link)`
 `
 
 const IconDiv = styled.div`
-  cursor: pointer;
   position: relative;
 `
 
@@ -59,18 +58,20 @@ const CheckboxInput = styled.input` /*Checkbox that goes over hamburger icon*/
 
 const List = styled.ul`
   position: absolute;
-  width: 120px;
+  width: 100vw;
   margin: -380px 0 0 -24px;
-  padding: 100px 50px 40px 26px;
-  background: #ddd;
+  padding: 100px 0px 0px 0px;
+  background: white;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
-  z-order: -1000;
   transition: all 0.5s cubic-bezier(0.8,0.2,0.05,1.0);
+  z-index: -3;
 `
 
 const Li = styled.li`
-  padding: 8px 0;
+  padding: 12px 0;
+  text-align: center;
+  border-bottom: 1px solid #333333;
 `
 
 const StyledA = styled.a`
@@ -107,7 +108,7 @@ const Header = () => (
        </Li>
       </List>
     </IconDiv>
-    <div className="logoName">
+    <div>
       <StyledLink to="/">
         Creation
         <GreenSpan>
