@@ -6,7 +6,7 @@ import styled from 'styled-components'
 const HeaderWrapper = styled.div`
   background: white;
   height: 80px;
-  width: 375px;
+  width: 100%;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
