@@ -1,6 +1,7 @@
 // import { Link } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
+import MediaQuery from 'react-responsive';
 
 import './hero.css'
 import BackgroundImage from './heroBackgroundImage.js'
@@ -9,9 +10,9 @@ import { device } from './device'
 const HeroWrapper = styled.div`
   height: 526px;
 
-  @media (min-width: 700px) {
+  @media ${device.tablet} {
       height: 100vh;
-    }
+  }
 `
 
 const HeroInsideWrapper = styled.div`
@@ -25,7 +26,7 @@ const PlayButtonIcon = styled.div`
   top: 170px;
   @media ${device.laptop} {
       top: calc(50% - 50px);
-    }
+  }
 `
 
 const Svg = styled.svg`
@@ -45,7 +46,7 @@ const WatchVideoText = styled.div`
   text-shadow: 0px 4.94792px 9.89583px rgba(0, 0, 0, 0.2);
   color: #FFFFFF;
   @media ${device.laptop} {
-      top: calc(50% + 100px);
+      top: calc(50% + 80px);
       line-height: 19px;
       font-size: 16px;
       text-align: center;
@@ -53,7 +54,7 @@ const WatchVideoText = styled.div`
       text-transform: uppercase;
   }
   @media ${device.laptopL} {
-      top: calc(50% + 150px);
+      top: calc(50% + 120px);
   }
 `
 
@@ -67,8 +68,12 @@ const HeroText = styled.div`
   text-align: center;
   width: 280px;
   color: #FFFFFF;
+  @media screen and ${device.tablet} {
+      width: 70%;
+      max-width: 800px;
+  }
   @media screen and ${device.laptop} {
-      top: calc(50% + 144px);
+      top: calc(50% + 124px);
       font-style: normal;
       font-weight: normal;
       line-height: 40px;
@@ -78,7 +83,7 @@ const HeroText = styled.div`
       max-width: 800px;
   }
   @media screen and ${device.laptopL} {
-      top: calc(50% + 194px);
+      top: calc(50% + 164px);
   } 
 `
 
@@ -99,10 +104,21 @@ const Hero = () => (
   <HeroWrapper>
   	<HeroInsideWrapper>
   		<PlayButtonIcon className="centerAbsolute">
-  			<Svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-	  			<path fillRule="evenodd" clipRule="evenodd" d="M30 60C46.5685 60 60 46.5685 60 30C60 13.4315 46.5685 0 30 0C13.4315 0 0 13.4315 0 30C0 46.5685 13.4315 60 30 60Z" fill="white"/>
-	  			<path fillRule="evenodd" clipRule="evenodd" d="M26.3997 21.6L38.3997 30L26.3997 38.4V21.6Z" fill="#333333"/>
-  			</Svg>
+        <MediaQuery minWidth={1024}>
+          {(matches) => {
+            if (matches) {
+              return <Svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" clipRule="evenodd" d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100Z" fill="white"/>
+                  <path fillRule="evenodd" clipRule="evenodd" d="M44 36L64 50L44 64V36Z" fill="#333333"/>
+                </Svg>;
+            } else {
+              return <Svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" clipRule="evenodd" d="M30 60C46.5685 60 60 46.5685 60 30C60 13.4315 46.5685 0 30 0C13.4315 0 0 13.4315 0 30C0 46.5685 13.4315 60 30 60Z" fill="white"/>
+                  <path fillRule="evenodd" clipRule="evenodd" d="M26.3997 21.6L38.3997 30L26.3997 38.4V21.6Z" fill="#333333"/>
+                </Svg>;
+            }
+          }}
+        </MediaQuery>
   		</PlayButtonIcon>
   		<WatchVideoText className="centerAbsolute">
   			Watch Video
