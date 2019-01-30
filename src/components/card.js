@@ -1,9 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
+import { device } from './device'
 
 const CardWrapper = styled.div`
   margin-top: 40px;
   display: flex;
+  @media ${device.tablet} {
+      padding: 0px 30px;
+      margin-top: 0px;
+  }
 `
 
 const CardIcon = styled.div`
@@ -29,8 +34,8 @@ const CardText = styled.div`
   color: #535353;
 `
 
-const Card = ({title, text, icon}) => (
-  <CardWrapper>
+const Card = ({className, title, text, icon}) => (
+  <CardWrapper className={className}>
     <CardIcon>
     	<svg className="icon" width="32" height="32">
     			<path fillRule="evenodd" clipRule="evenodd" d={icon} fill="#666666"/>

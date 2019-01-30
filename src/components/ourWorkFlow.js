@@ -2,9 +2,26 @@ import React from 'react'
 import Title from './title'
 import GreenButton from './greenButton'
 import styled from 'styled-components'
+import OurWorkFlowImage from './ourWorkFlowImage.js'
+import { device } from './device'
 
 const OurWorkFlowWrapper = styled.div`
-  margin: 80px 21px 0 21px;
+  padding: 80px 21px 0 21px;
+  position: relative;
+  max-width: 1240px;
+  left: 50%;
+  transform: translate(-50%,0);
+  box-sizing: border-box;
+  display: grid;
+  grid-column-gap: 50px;
+  justify-content: space-between;
+  @media ${device.tablet} {
+      padding: 300px 40px 0 40px;
+      grid-template-columns: 6fr 4fr;
+      grid-template-rows: 30% 80px auto 1fr;
+      grid-column: 1;
+      align-items: start;
+  }
 `
 
 const SmallTitle = styled.span`
@@ -14,14 +31,33 @@ const SmallTitle = styled.span`
   font-size: 14px;
   letter-spacing: 3.2px;
   text-transform: uppercase;
+  @media ${device.tablet} {
+      grid-column: 2;
+      align-self: end
+  }
 `
 
-const StyledImg = styled.img`
+const StyledTitle = styled(Title)`
+  @media ${device.tablet} {
+    grid-column: 2;
+}
+`
+
+const StyledOurWorkFlowImage = styled(OurWorkFlowImage)`
   display: block;
   margin-left: auto;
   margin-right: auto;
   margin-top: 16px;
   margin-bottom: 40px;
+  width: 65%;
+  max-width: 600px;
+  box-sizing: border-box;
+  @media ${device.tablet} {
+      grid-column: 1;
+      grid-row: 1 / 5;
+      margin-top: 0px;
+      margin-bottom: 0px;
+  }
 `
 
 const Text = styled.span`
@@ -32,6 +68,9 @@ const Text = styled.span`
   font-size: 16px;
   letter-spacing: 0.1px;
   color: #535353;
+  @media ${device.tablet} {
+      grid-column: 2;
+  }
 `
 
 const StyledGreenButton = styled(GreenButton)`
@@ -39,6 +78,11 @@ const StyledGreenButton = styled(GreenButton)`
   color: #262626;
   background: none;
   border: 1.5px solid #DADADA;
+
+  @media ${device.tablet} {
+      grid-column: 2;
+      margin-top: 40px;
+  }
 
   :hover
     {background: #FFFFFF;
@@ -53,8 +97,8 @@ const OurWorkFlow = () => (
   	<SmallTitle>
   		BEST SERVICE
   	</SmallTitle>
-  	<Title titleText="Our Work Flow"/>
-  	<StyledImg src={require('../images/phones.png')} alt="" />
+  	<StyledTitle titleText="Our Work Flow"/>
+  	<StyledOurWorkFlowImage />
   	<Text>
   		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, ex ea commodo consequat.   Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium natus error sit. 
   	</Text>
