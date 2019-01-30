@@ -2,17 +2,36 @@ import React from 'react'
 import Title from './title'
 import GreenButton from './greenButton'
 import styled from 'styled-components'
+import { device } from './device'
 
 const FooterWrapper = styled.div`
-    margin: 80px 21px 0 21px;
+    padding: 80px 21px 0 21px;
+    position: relative;
+    max-width: 1240px;
+    left: 50%;
+    transform: translate(-50%,0);
+    box-sizing: border-box;
+    @media ${device.tablet} {
+        padding: 200px 0px 80px 0px;
+        display: flex;
+        justify-content: space-between;
+    }
 `
 
 const DotTitle = styled.div`
     display: flex;
 `
 
+const TextWrapper = styled.div`
+    margin-top: 40px;
+    @media ${device.tablet} { 
+        margin-top: 0px;
+        max-width: 268px;
+    }
+`
+
 const SmallTitle = styled.div`
-margin-top: 40px;
+
 font-style: normal;
 font-weight: 500;
 line-height: 23px;
@@ -38,6 +57,10 @@ const StyledTitle = styled(Title)`
 
 const StyledGreenButton = styled(GreenButton)`
     margin: 40px 0px 40px 0px;
+    @media ${device.tablet} {
+        width: 171px;
+        margin-top: 0px;
+    }
 `
 
 const Footer = () => (
@@ -48,18 +71,22 @@ const Footer = () => (
 	    	<StyledTitle titleText="."/>
 	    </span>
     </DotTitle>
-    <SmallTitle>
-    Address
-    </SmallTitle>
-    <Text>
-    5th Floor, AH Building, 756 New Designst Melbourne, Australia
-    </Text>
-    <SmallTitle>
-    Help
-    </SmallTitle>
-    <Text>
-    Duis aute irure dolor in repre henderit in  iste natus esse.
-    </Text>
+    <TextWrapper>
+        <SmallTitle>
+        Address
+        </SmallTitle>
+        <Text>
+        5th Floor, AH Building, 756 New Designst Melbourne, Australia
+        </Text>
+    </TextWrapper>
+    <TextWrapper>
+        <SmallTitle>
+        Help
+        </SmallTitle>
+        <Text>
+        Duis aute irure dolor in repre henderit in  iste natus esse.
+        </Text>
+    </TextWrapper>
     <StyledGreenButton buttonText="CONTACT US"/>
   </FooterWrapper>
 )

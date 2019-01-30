@@ -81,6 +81,9 @@ const StyledA = styled.a`
   font-size: 16px;
   letter-spacing: 0.1px;
   color: inherit;
+  :hover {
+    color: #35CC62;
+  };
 `
 
 const Header = () => (

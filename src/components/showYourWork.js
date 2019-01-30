@@ -58,6 +58,7 @@ const AccordionsWrapper = styled.div`
 const StyledGreenButton = styled(GreenButton)`
   @media ${device.tablet} {
       width: 165px;
+      margin-top: 67px
   }
 `
 

@@ -6,7 +6,7 @@ const CardWrapper = styled.div`
   margin-top: 40px;
   display: flex;
   @media ${device.tablet} {
-      padding: 0px 30px;
+      padding: 30px;
       margin-top: 0px;
   }
 `

@@ -63,6 +63,9 @@ const StyledLink = styled(Link)`
 	letter-spacing: 1.4px;
 	text-transform: uppercase;
 	color: inherit;
+	:hover {
+		color: #35CC62;
+	};
 `
 
 const Svg = styled.svg`
