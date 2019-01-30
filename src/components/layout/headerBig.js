@@ -1,6 +1,7 @@
 import { Link } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
+import { device } from '../device'
 
 const HeaderWrapper = styled.div`
 	background: white;
@@ -9,7 +10,11 @@ const HeaderWrapper = styled.div`
 	position: fixed;
 	top: 0;
 	z-index: 999;
-	margin: 0 auto
+	margin: 0 auto;
+	display: none;
+	@media ${device.tablet} {
+	    display: block;
+	}
 `
 
 const HeaderInsideWrapper = styled.div`
@@ -66,6 +71,12 @@ const StyledLink = styled(Link)`
 	:hover {
 		color: #35CC62;
 	};
+	@media ${device.tablet} {
+	    padding: 0px 10px;
+	}
+	@media ${device.laptop} {
+	    padding: 0px 19px;
+	}
 `
 
 const Svg = styled.svg`

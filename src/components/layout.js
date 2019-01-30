@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
-import MediaQuery from 'react-responsive';
 
 import Header from './layout/header'
 import HeaderBig from './layout/headerBig'
@@ -30,15 +29,8 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <MainWrapper>
-          <MediaQuery minWidth={940}>
-            {(matches) => {
-              if (matches) {
-                return <HeaderBig />;
-              } else {
-                return <Header />;
-              }
-            }}
-          </MediaQuery>
+          <Header />
+          <HeaderBig />
           {children}
           <Footer />
         </MainWrapper>

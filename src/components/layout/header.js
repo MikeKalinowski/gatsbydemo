@@ -2,6 +2,7 @@ import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
+import { device } from '../device'
 
 const HeaderWrapper = styled.div`
   background: white;
@@ -15,9 +16,12 @@ const HeaderWrapper = styled.div`
   position: fixed;
   top: 0;
   z-index: 999;
+  @media ${device.tablet} {
+      display: none;
+  }
 `
 
-const StyledLink = styled(Link)`
+const StyledLink2 = styled(Link)`
   text-decoration: none;
   font-style: normal;
   font-weight: 500;
@@ -74,7 +78,7 @@ const Li = styled.li`
   border-bottom: 1px solid #333333;
 `
 
-const StyledA = styled.a`
+const StyledLink = styled(Link)`
   text-decoration: none;
   font-style: normal;
   font-weight: 500;
@@ -95,29 +99,29 @@ const Header = () => (
       <CheckboxInput type="checkbox" />
       <List>
        <Li>
-        <StyledA href="/">Home</StyledA>
+        <StyledLink to="/">Home</StyledLink>
        </Li>
        <Li>
-        <StyledA href="/">Pages</StyledA>
+        <StyledLink to="/">Pages</StyledLink>
        </Li>
        <Li>
-        <StyledA href="/">Work</StyledA>
+        <StyledLink to="/">Work</StyledLink>
        </Li>
        <Li>
-        <StyledA href="/">Blog</StyledA>
+        <StyledLink to="/">Blog</StyledLink>
        </Li>
        <Li>
-        <StyledA href="/">About</StyledA>
+        <StyledLink to="/">About</StyledLink>
        </Li>
       </List>
     </IconDiv>
     <div>
-      <StyledLink to="/">
+      <StyledLink2 to="/">
         Creation
         <GreenSpan>
           .
         </GreenSpan>
-      </StyledLink>
+      </StyledLink2>
     </div>
     <IconDiv>
       <Svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -101,7 +101,9 @@ const OurWorkFlow = () => (
   	<StyledTitle titleText="Our Work Flow"/>
   	<StyledOurWorkFlowImage />
   	<Text>
-  		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, ex ea commodo consequat.   Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium natus error sit. 
+  		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, ex ea commodo consequat.
+      <br />
+      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium natus error sit. 
   	</Text>
   	<StyledGreenButton buttonText="LEARN MORE"/>
   </OurWorkFlowWrapper>
