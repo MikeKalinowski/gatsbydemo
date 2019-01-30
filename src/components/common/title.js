@@ -2,6 +2,7 @@
 // import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
+import { device } from '../device'
 
 const StyledTitle = styled.div`
 	font-style: normal;
@@ -9,6 +10,10 @@ const StyledTitle = styled.div`
 	line-height: 46px;
 	font-size: 30px;
 	color: #333333;
+	@media ${device.tablet} {
+		font-size: 38px;
+		font-weight: normal;
+	}
 `
 
 const Title = ({ className, titleText }) => (

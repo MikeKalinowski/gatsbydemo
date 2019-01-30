@@ -1,6 +1,7 @@
 // import { Link } from 'gatsby'
 import React from 'react'
 import styled, { css, keyframes } from 'styled-components'
+import { device } from '../device'
 
 const AccordionWrapper = styled.div`
 	margin-top: 32px;
@@ -22,6 +23,10 @@ const AccordionWrapper = styled.div`
 	    	fill: #35CC62
 	    }
 	`}
+
+	@media ${device.tablet} {
+		margin-top: 40px
+	}
 `
 
 const IconSvg = styled.svg`
@@ -72,6 +77,10 @@ const Text = styled.div`
 	letter-spacing: 0.1px;
 	color: #666666;
 	${props => props.clicked && animationMixin}
+
+	@media ${device.tablet} {
+		margin-top: 26px;
+	}
 `
 
 class Accordion extends React.Component {
@@ -94,7 +103,7 @@ class Accordion extends React.Component {
 	render() {
 		return(
 			<div>
-				<AccordionWrapper onClick={this.handleClick} clicked={this.state.clicked}>
+				<AccordionWrapper className={this.props.className} onClick={this.handleClick} clicked={this.state.clicked}>
 					<IconSvg width="14" height="14"> 
 							<path fillRule="evenodd" clipRule="evenodd" d={this.props.accordionIcon} fill="#333333"/>
 					</IconSvg>

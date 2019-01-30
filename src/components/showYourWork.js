@@ -1,10 +1,9 @@
-// import { Link } from 'gatsby'
-// import PropTypes from 'prop-types'
 import React from 'react'
-import Title from './title'
-import GreenButton from './greenButton'
-import Accordion from './accordion'
 import styled from 'styled-components'
+
+import Title from './common/title'
+import GreenButton from './common/greenButton'
+import Accordion from './common/accordion'
 import { device } from './device'
 
 const ShowYourWorkWrapper = styled.div`
@@ -58,10 +57,15 @@ const AccordionsWrapper = styled.div`
 const StyledGreenButton = styled(GreenButton)`
   @media ${device.tablet} {
       width: 165px;
-      margin-top: 67px
+      margin-top: 67px;
   }
 `
 
+const StyledAccordion = styled(Accordion)`
+  @media ${device.tablet} {
+    margin-top: 0px;
+  }
+`
 
 const ShowYourWork = () => (
   <ShowYourWorkWrapper>
@@ -74,7 +78,7 @@ const ShowYourWork = () => (
     </LeftWrapper>
     <RightWrapper>
       <AccordionsWrapper>
-      <Accordion 
+      <StyledAccordion 
         accordionTitle="Explore Multipurpose The Me" 
         accordionText="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris niesi ut aliquip ex ea commodo consequat.sed do eiusmod tempor incididunt ut exercitation ullamco laboris quis  labore et doliore magna aliqua. 1"  
         accordionIcon="M13.1294 7.49175V10.5V11.375V14H0.879375V11.375V10.5V7.35175C0.3325 6.84863 0.002625 6.0515 0 5.25H0.004375L1.75437 0H12.2544L14.0044 5.25H14.0087C14.0061 6.13462 13.7944 7.00875 13.1294 7.49175ZM1.75451 13.125H12.2545V11.375H1.75451V13.125ZM12.2545 10.5H1.75451V7.8225C1.88664 7.854 2.02139 7.875 2.16314 7.875C2.82114 7.875 3.53864 7.54513 3.94201 7C4.29551 7.53813 4.76889 7.875 5.46364 7.875C6.09014 7.875 6.64139 7.45062 7.00451 7C7.36676 7.45062 7.91889 7.875 8.54451 7.875C9.24014 7.875 9.71351 7.53813 10.067 7C10.4704 7.54513 11.1599 7.875 11.817 7.875C11.9711 7.875 12.1036 7.85496 12.2366 7.83483L12.2366 7.83483L12.2545 7.83213V10.5ZM11.6708 0.875H2.33721L1.17083 4.375H12.8372L11.6708 0.875ZM2.163 7C1.54875 7 1.03688 6.00338 0.889879 5.25H13.1189C13.1189 5.25 13.1294 7 11.8449 7C10.5044 7 10.5044 6.12587 10.5044 6.12587H9.6215C9.6215 6.12587 9.6285 7 8.5435 7C7.44188 7 7.46638 6.12587 7.46638 6.12587H6.5415C6.5415 6.12587 6.56688 7 5.4635 7C4.37938 7 4.37938 6.12587 4.37938 6.12587H3.50438C3.50438 7 2.77813 7 2.163 7Z"

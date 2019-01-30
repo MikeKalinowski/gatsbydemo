@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import MediaQuery from 'react-responsive';
 
 import './hero.css'
-import BackgroundImage from './heroBackgroundImage.js'
+import BackgroundImage from './common/heroBackgroundImage.js'
 import { device } from './device'
 
 const HeroWrapper = styled.div`

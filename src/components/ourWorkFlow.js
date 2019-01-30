@@ -1,8 +1,9 @@
 import React from 'react'
-import Title from './title'
-import GreenButton from './greenButton'
 import styled from 'styled-components'
-import OurWorkFlowImage from './ourWorkFlowImage.js'
+
+import Title from './common/title'
+import GreenButton from './common/greenButton'
+import OurWorkFlowImage from './common/ourWorkFlowImage.js'
 import { device } from './device'
 
 const OurWorkFlowWrapper = styled.div`

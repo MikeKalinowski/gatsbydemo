@@ -1,8 +1,9 @@
 import React from 'react'
-import Title from './title'
-import GreenButton from './greenButton'
 import styled from 'styled-components'
-import { device } from './device'
+
+import Title from '../common/title'
+import GreenButton from '../common/greenButton'
+import { device } from '../device'
 
 const FooterWrapper = styled.div`
     padding: 80px 21px 0 21px;

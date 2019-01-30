@@ -1,7 +1,8 @@
 import React from 'react'
-import Title from './title'
-import Card from './card'
 import styled from 'styled-components'
+
+import Title from './common/title'
+import Card from './common/card'
 import { device } from './device'
 
 const OurOfferWrapper = styled.div`
@@ -31,6 +32,7 @@ const Text = styled.div`
       max-width: 600px;
       margin: 16px auto 0;
       text-align: center;
+      font-size: 19px;
   }
 `
 
