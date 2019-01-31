@@ -33,6 +33,10 @@ const Layout = ({ children }) => (
             }
           }
         }
+        contentfulHome{
+            footerAddress
+            footerHelp
+        }
       }
     `}
     render={data => (
@@ -41,7 +45,7 @@ const Layout = ({ children }) => (
           <Header data={data}/>
           <HeaderBig data={data}/>
           {children}
-          <Footer />
+          <Footer data={data}/>
         </MainWrapper>
       </>
     )}

@@ -112,7 +112,7 @@ const StyledBackgroundImage = styled(BackgroundImage)`
   z-index: -1;
 `
 
-const Hero = () => (
+const Hero = ({ data }) => (
   <HeroWrapper>
   	<HeroInsideWrapper>
   		<PlayButtonIconLarge className="centerAbsolute">
@@ -131,8 +131,7 @@ const Hero = () => (
   			Watch Video
   		</WatchVideoText> 
   		<HeroText className="centerAbsolute">
-  			Differentiate Yourself And Attract More 
-  			Attention Sales And Profits
+  			{data.contentfulHome.heroText}
   		</HeroText>
   		<ArrowIcon className="centerAbsolute">
   			<svg width="19" height="22" viewBox="0 0 19 22" fill="none" xmlns="http://www.w3.org/2000/svg">

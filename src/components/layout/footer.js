@@ -64,7 +64,7 @@ const StyledGreenButton = styled(GreenButton)`
     }
 `
 
-const Footer = () => (
+const Footer = ({ data }) => (
   <FooterWrapper>
     <DotTitle>
 	    <Title titleText="Creation"/>
@@ -77,7 +77,7 @@ const Footer = () => (
         Address
         </SmallTitle>
         <Text>
-        5th Floor, AH Building, 756 New Designst Melbourne, Australia
+        {data.contentfulHome.footerAddress}
         </Text>
     </TextWrapper>
     <TextWrapper>
@@ -85,7 +85,7 @@ const Footer = () => (
         Help
         </SmallTitle>
         <Text>
-        Duis aute irure dolor in repre henderit in  iste natus esse.
+        {data.contentfulHome.footerHelp}
         </Text>
     </TextWrapper>
     <StyledGreenButton buttonText="CONTACT US"/>
