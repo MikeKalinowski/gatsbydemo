@@ -1,5 +1,4 @@
 import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import { device } from '../device'
@@ -99,7 +98,7 @@ const Header = ({ data }) => (
       <CheckboxInput type="checkbox" />
       <List>
         {data.allContentfulHeader.edges.map((edge, index) => (
-          <Li key={index}><StyledLink to="{edge.node.linkUrl}">{edge.node.linkTitle}</StyledLink></Li>
+          <Li key={index}><StyledLink to={edge.node.linkUrl}>{edge.node.linkTitle}</StyledLink></Li>
           ))
         }
       </List>
@@ -119,13 +118,5 @@ const Header = ({ data }) => (
     </IconDiv>
   </HeaderWrapper>
 )
-
-Header.propTypes = { // Static typing - mowi o tym jaki typ danych powinien byc przekazany w propsie
-  type: PropTypes.string,
-}
-
-Header.defaultProps = { // Mowi co jesli nie dostanie stringa o typie z linijki wyzej
-  type: ``,
-}
 
 export default Header

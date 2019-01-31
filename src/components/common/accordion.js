@@ -1,4 +1,3 @@
-// import { Link } from 'gatsby'
 import React from 'react'
 import styled, { css, keyframes } from 'styled-components'
 import { device } from '../device'

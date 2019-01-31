@@ -111,7 +111,7 @@ const HeaderBig = ({ data }) => (
 	  	<Links>
 	  		<List>
 	  		  {data.allContentfulHeader.edges.map((edge, index) => (
-	  		    <ListItem key={index}><StyledLink to="{edge.node.linkUrl}">{edge.node.linkTitle}</StyledLink></ListItem>
+	  		    <ListItem key={index}><StyledLink to={edge.node.linkUrl}>{edge.node.linkTitle}</StyledLink></ListItem>
 	  		    ))
 	  		  }
 	  		</List>
