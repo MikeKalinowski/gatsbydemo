@@ -90,7 +90,7 @@ const StyledLink = styled(Link)`
   };
 `
 
-const Header = () => (
+const Header = ({ data }) => (
   <HeaderWrapper>
     <IconDiv>
       <Svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -98,21 +98,10 @@ const Header = () => (
       </Svg>
       <CheckboxInput type="checkbox" />
       <List>
-       <Li>
-        <StyledLink to="/">Home</StyledLink>
-       </Li>
-       <Li>
-        <StyledLink to="/">Pages</StyledLink>
-       </Li>
-       <Li>
-        <StyledLink to="/">Work</StyledLink>
-       </Li>
-       <Li>
-        <StyledLink to="/">Blog</StyledLink>
-       </Li>
-       <Li>
-        <StyledLink to="/">About</StyledLink>
-       </Li>
+        {data.allContentfulHeader.edges.map((edge, index) => (
+          <Li key={index}><StyledLink to="{edge.node.linkUrl}">{edge.node.linkTitle}</StyledLink></Li>
+          ))
+        }
       </List>
     </IconDiv>
     <div>

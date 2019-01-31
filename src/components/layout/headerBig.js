@@ -84,7 +84,7 @@ const Svg = styled.svg`
 	cursor: pointer;
 `
 
-const HeaderBig = () => (
+const HeaderBig = ({ data }) => (
   <HeaderWrapper>
   	<HeaderInsideWrapper>
 	  	<Logo>
@@ -110,11 +110,10 @@ const HeaderBig = () => (
 	  	</Logo>
 	  	<Links>
 	  		<List>
-	  		  <ListItem><StyledLink to="/">HOME</StyledLink></ListItem>
-	  		  <ListItem><StyledLink to="/">PAGES</StyledLink></ListItem>
-	  		  <ListItem><StyledLink to="/">WORK</StyledLink></ListItem>
-	  		  <ListItem><StyledLink to="/">BLOG</StyledLink></ListItem>
-	  		  <ListItem><StyledLink to="/">ABOUT</StyledLink></ListItem>
+	  		  {data.allContentfulHeader.edges.map((edge, index) => (
+	  		    <ListItem key={index}><StyledLink to="{edge.node.linkUrl}">{edge.node.linkTitle}</StyledLink></ListItem>
+	  		    ))
+	  		  }
 	  		</List>
 	  	</Links>
 	  	<Icons>

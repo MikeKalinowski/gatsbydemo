@@ -24,13 +24,22 @@ const Layout = ({ children }) => (
             title
           }
         }
+        allContentfulHeader(sort: {fields: [createdAt], order: ASC}) {
+          edges {
+            node {
+              linkTitle
+              linkUrl
+              createdAt
+            }
+          }
+        }
       }
     `}
     render={data => (
       <>
         <MainWrapper>
-          <Header />
-          <HeaderBig />
+          <Header data={data}/>
+          <HeaderBig data={data}/>
           {children}
           <Footer />
         </MainWrapper>
