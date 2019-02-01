@@ -11,7 +11,6 @@ const OurOfferWrapper = styled.div`
   max-width: 1240px;
   left: 50%;
   transform: translate(-50%,0);
-  box-sizing: border-box;
   @media ${device.tablet} {
       padding: 300px 0px 0px 0px;
   }
@@ -39,7 +38,7 @@ const Text = styled.div`
 const CardsWrapper = styled.div`
   @media ${device.tablet} {
     display: flex;
-    margin: 76px;
+    padding: 76px;
 
     >div:nth-child(2) { /*Makes the second card pretty :)*/
       box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.1);

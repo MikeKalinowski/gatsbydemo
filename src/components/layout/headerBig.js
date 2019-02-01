@@ -20,7 +20,6 @@ const HeaderWrapper = styled.div`
 const HeaderInsideWrapper = styled.div`
 	max-width: 1240px;
 	padding: 0 40px;
-	box-sizing: border-box;
 	position: relative;
 	top: 50%;
 	left: 50%;
@@ -80,7 +79,7 @@ const StyledLink = styled(Link)`
 `
 
 const Svg = styled.svg`
-	padding: 0px 15px;
+	margin: 0px 15px;
 	cursor: pointer;
 `
 

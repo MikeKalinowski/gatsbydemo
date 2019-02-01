@@ -12,7 +12,6 @@ const OurWorkFlowWrapper = styled.div`
   max-width: 1240px;
   left: 50%;
   transform: translate(-50%,0);
-  box-sizing: border-box;
   display: grid;
   grid-column-gap: 50px;
   justify-content: space-between;
@@ -46,13 +45,9 @@ const StyledTitle = styled(Title)`
 
 const StyledOurWorkFlowImage = styled(OurWorkFlowImage)`
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 16px;
-  margin-bottom: 40px;
+  margin: 16px auto 40px;
   width: 65%;
   max-width: 600px;
-  box-sizing: border-box;
   @media ${device.tablet} {
       grid-column: 1;
       grid-row: 1 / 5;
@@ -79,18 +74,15 @@ const StyledGreenButton = styled(GreenButton)`
   color: #262626;
   background: none;
   border: 1.5px solid #DADADA;
-
   @media ${device.tablet} {
       grid-column: 2;
-      margin-top: 40px;
   }
-
-  :hover
-    {background: #FFFFFF;
-      border: 1.5px solid #35CC62;
-      transform: translateY(-3px);
-    
-      color: #35CC62;}
+  :hover {
+    background: #FFFFFF;
+    border: 1.5px solid #35CC62;
+    transform: translateY(-3px);
+    color: #35CC62;
+  }
 `
 
 const OurWorkFlow = ({ data }) => (

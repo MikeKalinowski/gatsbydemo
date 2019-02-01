@@ -12,8 +12,6 @@ const ShowYourWorkWrapper = styled.div`
   max-width: 1240px;
   left: 50%;
   transform: translate(-50%,0);
-  box-sizing: border-box;
-
   @media ${device.tablet} {
       padding: 120px 40px 0 40px;
       display: flex;
@@ -23,16 +21,14 @@ const ShowYourWorkWrapper = styled.div`
 
 const LeftWrapper = styled.div`
   @media ${device.tablet} {
-      width: 40%;
+      width: 43%;
       padding-right: 56px;
-      box-sizing: border-box;
   }
 `
 
 const RightWrapper = styled.div`
   @media ${device.tablet} {
-      width: 60%;
-      box-sizing: border-box;
+      width: 57%;
   }
 `
 
@@ -48,9 +44,9 @@ const Text = styled.div`
 `
 
 const AccordionsWrapper = styled.div`
-  margin-top: 80px;
+  padding-top: 80px;
   @media ${device.tablet} {
-    margin-top: 0px;
+    padding-top: 0px;
 
     >div:first-child>div {
       margin-top: 0px;

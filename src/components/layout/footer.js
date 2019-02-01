@@ -11,7 +11,6 @@ const FooterWrapper = styled.div`
     max-width: 1240px;
     left: 50%;
     transform: translate(-50%,0);
-    box-sizing: border-box;
     @media ${device.tablet} {
         padding: 200px 0px 80px 0px;
         display: flex;
