@@ -7,9 +7,9 @@ import OurWorkFlowImage from './common/ourWorkFlowImage.js'
 import { device } from './device'
 
 const OurWorkFlowWrapper = styled.div`
-  padding: 80px 21px 0 21px;
+  padding: ${props => props.theme.layout.wrapperPaddingMobile};
   position: relative;
-  max-width: 1240px;
+  max-width: ${props => props.theme.layout.contentWidthDesktop};
   left: 50%;
   transform: translate(-50%,0);
   display: grid;
@@ -63,7 +63,7 @@ const Text = styled.span`
   line-height: 26px;
   font-size: 16px;
   letter-spacing: 0.1px;
-  color: #535353;
+  color: ${props => props.theme.color.gray};
   @media ${device.tablet} {
       grid-column: 2;
   }
@@ -71,7 +71,7 @@ const Text = styled.span`
 
 const StyledGreenButton = styled(GreenButton)`
   margin-top: 40px;
-  color: #262626;
+  color: ${props => props.theme.color.gray};
   background: none;
   border: 1.5px solid #DADADA;
   @media ${device.tablet} {
@@ -79,9 +79,9 @@ const StyledGreenButton = styled(GreenButton)`
   }
   :hover {
     background: #FFFFFF;
-    border: 1.5px solid #35CC62;
+    border: 1.5px solid ${props => props.theme.color.accent};
     transform: translateY(-3px);
-    color: #35CC62;
+    color: ${props => props.theme.color.accent};;
   }
 `
 

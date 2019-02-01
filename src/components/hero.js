@@ -55,7 +55,7 @@ const WatchVideoText = styled.div`
   letter-spacing: 6px;
   text-transform: uppercase;
   text-shadow: 0px 4.94792px 9.89583px rgba(0, 0, 0, 0.2);
-  color: #FFFFFF;
+  color: ${props => props.theme.color.heroText};
   @media ${device.laptop} {
       top: calc(50% + 80px);
       line-height: 19px;
@@ -78,7 +78,7 @@ const HeroText = styled.div`
   font-size: 26px;
   text-align: center;
   width: 280px;
-  color: #FFFFFF;
+  color: ${props => props.theme.color.heroText};
   @media screen and ${device.tablet} {
       width: 70%;
       max-width: 800px;

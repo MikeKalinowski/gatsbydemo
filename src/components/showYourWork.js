@@ -8,8 +8,8 @@ import { device } from './device'
 
 const ShowYourWorkWrapper = styled.div`
   position: relative;
-  padding: 80px 20px 0 20px;
-  max-width: 1240px;
+  padding: ${props => props.theme.layout.wrapperPaddingMobile};
+  max-width: ${props => props.theme.layout.contentWidthDesktop};
   left: 50%;
   transform: translate(-50%,0);
   @media ${device.tablet} {
@@ -40,7 +40,7 @@ const Text = styled.div`
   line-height: 26px;
   font-size: 16px;
   letter-spacing: 0.1px;
-  color: #666666;
+  color: ${props => props.theme.color.gray};
 `
 
 const AccordionsWrapper = styled.div`
@@ -48,8 +48,8 @@ const AccordionsWrapper = styled.div`
   @media ${device.tablet} {
     padding-top: 0px;
 
-    >div:first-child>div {
-      margin-top: 0px;
+    >div:first-child>div:first-child {
+      padding-top: 0px;
     }
   }
 `

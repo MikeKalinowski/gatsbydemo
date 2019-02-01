@@ -2,35 +2,42 @@ import React from 'react'
 import styled, { css, keyframes } from 'styled-components'
 import { device } from '../device'
 
+// IconSvg is before AccordionWrapper not to overwrite the "path" attribute later
+const IconSvg = styled.svg`
+	margin-right: 10px;
+	path {
+		fill: ${props => props.theme.color.darkGray}
+	}
+`
+
 const AccordionWrapper = styled.div`
-	margin-top: 32px;
+	padding-top: 32px;
 	cursor: pointer;
 	position: relative;
 	
 	:hover .accordionTitle {
-		color: #35CC62
+		color: ${props => props.theme.color.accent};
 	}
 	:hover path {
-		fill: #35CC62;
+		fill: ${props => props.theme.color.accent};
 	}
 
-	${props => props.clicked && `
-	    .accordionTitle {
-	    	color: #35CC62
-	    }
-	    path {
-	    	fill: #35CC62
-	    }
-	`}
+	${props => props.clicked && accordionColorMixin}
 
 	@media ${device.tablet} {
-		margin-top: 40px
+		padding-top: 40px
 	}
 `
 
-const IconSvg = styled.svg`
-	margin-right: 10px;
-`
+const accordionColorMixin = props =>
+	css`
+		.accordionTitle {
+	    	color: ${props => props.theme.color.accent}
+	    }
+	    path {
+	    	fill: ${props => props.theme.color.accent}
+	    }
+	`
 
 const ClosingArrowSvg = styled.svg`
 	position: absolute;
@@ -54,6 +61,26 @@ const slide = keyframes`
 	  max-height: 400px;
 	}
 `
+
+const Text = styled.div`
+	display: none;
+	overflow: hidden;
+	max-height: 0px;
+	padding-top: 12px;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 26px;
+	font-size: 14px;
+	letter-spacing: 0.1px;
+	color: ${props => props.theme.color.gray};
+	${props => props.clicked && animationMixin}
+
+	@media ${device.tablet} {
+		padding-top: 26px;
+	}
+`
+
 const animationMixin = props =>
 	css`
 		display: block;
@@ -61,26 +88,7 @@ const animationMixin = props =>
 		animation-duration: 2s;
 		animation-fill-mode: forwards;
 		animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
-		`
-
-const Text = styled.div`
-	display: none;
-	overflow: hidden;
-	max-height: 0px;
-	margin-top: 12px;
-	font-family: Open Sans;
-	font-style: normal;
-	font-weight: normal;
-	line-height: 26px;
-	font-size: 14px;
-	letter-spacing: 0.1px;
-	color: #666666;
-	${props => props.clicked && animationMixin}
-
-	@media ${device.tablet} {
-		margin-top: 26px;
-	}
-`
+	`
 
 class Accordion extends React.Component {
 	constructor(props) {
@@ -104,7 +112,7 @@ class Accordion extends React.Component {
 			<div>
 				<AccordionWrapper className={this.props.className} onClick={this.handleClick} clicked={this.state.clicked}>
 					<IconSvg width="14" height="14"> 
-							<path fillRule="evenodd" clipRule="evenodd" d={this.props.accordionIcon} fill="#333333"/>
+							<path fillRule="evenodd" clipRule="evenodd" d={this.props.accordionIcon} />
 					</IconSvg>
 					<Title className="accordionTitle">
 						{this.props.accordionTitle}

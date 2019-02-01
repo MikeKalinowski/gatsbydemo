@@ -5,7 +5,7 @@ import { device } from '../device'
 
 const HeaderWrapper = styled.div`
 	background: white;
-	height: 80px;
+	height: ${props => props.theme.layout.navHeightDesktop};
 	width: 100%;
 	position: fixed;
 	top: 0;

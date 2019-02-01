@@ -6,9 +6,9 @@ import Card from './common/card'
 import { device } from './device'
 
 const OurOfferWrapper = styled.div`
-	padding: 80px 21px 0 21px;
+	padding: ${props => props.theme.layout.wrapperPaddingMobile};
   position: relative;
-  max-width: 1240px;
+  max-width: ${props => props.theme.layout.contentWidthDesktop};
   left: 50%;
   transform: translate(-50%,0);
   @media ${device.tablet} {
@@ -26,7 +26,7 @@ const Text = styled.div`
 	font-weight: 300;
 	line-height: 22px;
 	font-size: 15px;
-	color: #878787;
+	color: ${props => props.theme.color.lightGray};
   @media ${device.tablet} {
       max-width: 600px;
       margin: 16px auto 0;
@@ -43,7 +43,7 @@ const CardsWrapper = styled.div`
     >div:nth-child(2) { /*Makes the second card pretty :)*/
       box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.1);
       path {
-        fill: #35CC62;
+        fill: ${props => props.theme.color.accent};
       }
     }
   }
