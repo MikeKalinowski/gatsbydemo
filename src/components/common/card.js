@@ -20,7 +20,7 @@ const CardTitle = styled.div`
   font-weight: 500;
   line-height: 32px;
   font-size: 21px;
-  color: #262626;
+  color: ${props => props.theme.color.darkGray};
 `
 
 const CardText = styled.div`
@@ -31,7 +31,7 @@ const CardText = styled.div`
   line-height: 26px;
   font-size: 16px;
   letter-spacing: 0.1px;
-  color: #535353;
+  color: ${props => props.theme.color.gray};
 `
 
 const Card = ({className, title, text, icon}) => (

@@ -117,7 +117,7 @@ class Accordion extends React.Component {
 					<Title className="accordionTitle">
 						{this.props.accordionTitle}
 					</Title>
-					<ClosingArrowSvg width="16" height="16" onClick={this.handleClick}>
+					<ClosingArrowSvg width="16" height="16">
 						<path fillRule="evenodd" clipRule="evenodd" d={this.state.clicked ? this.arrowIconClicked : this.arrowIconNotClicked} fill="black" fillOpacity="0.2"/>
 					</ClosingArrowSvg>
 				</AccordionWrapper>

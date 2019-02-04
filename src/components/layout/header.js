@@ -25,7 +25,7 @@ const StyledLink2 = styled(Link)`
   font-weight: 500;
   font-size: 28px;
   letter-spacing: 0.1px;
-  color: inherit;
+  color: ${props => props.theme.color.darkGray};
 `
 
 const IconDiv = styled.div`
@@ -39,7 +39,7 @@ const Svg = styled.svg`
 `
 
 const GreenSpan = styled.span`
-  color: #35CC62
+  color: ${props => props.theme.color.accent}
 `
 
 const CheckboxInput = styled.input` /*Checkbox that goes over hamburger icon*/
@@ -73,7 +73,7 @@ const List = styled.ul`
 const Li = styled.li`
   padding: 12px 0;
   text-align: center;
-  border-bottom: 1px solid #333333;
+  border-bottom: 1px solid ${props => props.theme.color.darkGray};
 `
 
 const StyledLink = styled(Link)`
@@ -84,7 +84,7 @@ const StyledLink = styled(Link)`
   letter-spacing: 0.1px;
   color: inherit;
   :hover {
-    color: #35CC62;
+    color: ${props => props.theme.color.accent};
   };
 `
 

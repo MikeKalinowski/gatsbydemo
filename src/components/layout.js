@@ -9,11 +9,12 @@ import HeaderBig from './layout/headerBig'
 import Footer from './layout/footer'
 import './layout.css'
 import { Theme } from './theme.js';
+import '../components/fonts.css';
 
 const MainWrapper = styled.div`
   margin: 0px auto;
   padding-top: 0px;
-  color: #333333;
+  color: ${props => props.theme.color.darkGray};
   font-family: Montserrat;
 `
 

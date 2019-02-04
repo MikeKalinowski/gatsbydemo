@@ -7,7 +7,7 @@ const StyledTitle = styled.div`
 	font-weight: 600;
 	line-height: 46px;
 	font-size: 30px;
-	color: #333333;
+	color: ${props => props.theme.color.darkGray};
 	@media ${device.tablet} {
 		font-size: 38px;
 		font-weight: normal;

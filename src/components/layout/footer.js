@@ -6,13 +6,13 @@ import GreenButton from '../common/greenButton'
 import { device } from '../device'
 
 const FooterWrapper = styled.div`
-    padding: 80px 21px 0 21px;
+    padding: ${props => props.theme.layout.wrapperPaddingMobile};
     position: relative;
-    max-width: 1240px;
+    max-width: ${props => props.theme.layout.contentWidthDesktop};
     left: 50%;
     transform: translate(-50%,0);
     @media ${device.tablet} {
-        padding: 200px 0px 80px 0px;
+        padding: 200px 40px 80px 40px;
         display: flex;
         justify-content: space-between;
     }
@@ -31,7 +31,6 @@ const TextWrapper = styled.div`
 `
 
 const SmallTitle = styled.div`
-
 font-style: normal;
 font-weight: 500;
 line-height: 23px;
@@ -48,11 +47,11 @@ font-weight: normal;
 line-height: 26px;
 font-size: 16px;
 letter-spacing: 0.1px;
-color: #878787
+color: ${props => props.theme.color.lightGray}
 `
 
 const StyledTitle = styled(Title)`
-    color: #29CE5D;
+    color: ${props => props.theme.color.accent};
 `
 
 const StyledGreenButton = styled(GreenButton)`

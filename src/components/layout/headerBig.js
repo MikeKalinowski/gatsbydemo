@@ -18,7 +18,7 @@ const HeaderWrapper = styled.div`
 `
 
 const HeaderInsideWrapper = styled.div`
-	max-width: 1240px;
+	max-width: ${props => props.theme.layout.contentWidthDesktop};
 	padding: 0 40px;
 	position: relative;
 	top: 50%;
@@ -52,7 +52,7 @@ const ListItem = styled.li`
 const Icons = styled.div`
 	display: inline-block;
 	position: absolute;
-	right: 0px;
+	right: 40px;
 	top: 50%;
 	transform: translate(0%, -50%)
 `
@@ -68,7 +68,7 @@ const StyledLink = styled(Link)`
 	text-transform: uppercase;
 	color: inherit;
 	:hover {
-		color: #35CC62;
+		color: ${props => props.theme.color.accent};
 	};
 	@media ${device.tablet} {
 	    padding: 0px 10px;

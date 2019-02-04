@@ -7,7 +7,6 @@ import ShowYourWork from '../components/showYourWork'
 import OurWorkFlow from '../components/ourWorkFlow'
 import OurOffer from '../components/ourOffer'
 import SEO from '../components/seo'
-import '../components/fonts.css';
 
 
 const IndexPage = ({ data }) => (

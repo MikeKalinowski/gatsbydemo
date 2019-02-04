@@ -54,7 +54,7 @@ const WatchVideoText = styled.div`
   text-align: center;
   letter-spacing: 6px;
   text-transform: uppercase;
-  text-shadow: 0px 4.94792px 9.89583px rgba(0, 0, 0, 0.2);
+  text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
   color: ${props => props.theme.color.heroText};
   @media ${device.laptop} {
       top: calc(50% + 80px);

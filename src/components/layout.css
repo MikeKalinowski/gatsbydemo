@@ -5,3 +5,8 @@ body {
 * {
 	box-sizing: border-box;
 }
+
+::selection {
+  background: #35CC62;
+  color: white;
+}

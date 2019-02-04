@@ -5,7 +5,7 @@ const StyledGreenButton = styled.button`
 	margin-top: 20px;
 	width: 100%;
 	height: 48px;
-	background: #35CC62;
+	background: ${props => props.theme.color.accent};
 	border: none;
 	border-radius: 4px;
 	cursor: pointer;
@@ -24,7 +24,7 @@ const StyledGreenButton = styled.button`
 		background: #FFFFFF;
 		border: 1px solid #35CC62;
 		transform: translateY(-3px);
-		color: #35CC62;
+		color: ${props => props.theme.color.accent};
 	}
 `
 
