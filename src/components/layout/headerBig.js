@@ -87,25 +87,27 @@ const HeaderBig = ({ data }) => (
   <HeaderWrapper>
   	<HeaderInsideWrapper>
 	  	<Logo>
-	  		<svg width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
-	  		    <path fillRule="evenodd" clipRule="evenodd" d="M26.4762 24.6553C26.9615 24.0233 27.25 23.2323 27.25 22.3739C27.25 20.3029 25.5711 18.6241 23.5 18.6241C22.4013 18.6241 21.413 19.0966 20.7234 19.8463C19.3476 21.4689 17.2941 22.4989 15 22.4989C10.8581 22.4989 7.50034 19.1416 7.5 15C7.50035 22.248 13.1987 27.5708 19.4112 28.0688C19.9823 28.1146 21.032 28.1991 22.5027 27.9902C23.9146 27.2027 25.5412 25.8143 26.4762 24.6553Z" fill="url(#paint0_linear)"/>
-	  		    <path fillRule="evenodd" clipRule="evenodd" d="M7.50018 15C7.50018 22.2487 13.3753 28.125 20.6226 28.125C21.2601 28.125 21.8869 28.0795 22.5 27.9917C20.2935 29.2689 17.7315 30 14.9987 30C8.08243 30 3.68615 25.5264 2.00955 22.5025C1.86848 21.5601 1.85592 20.6331 1.89253 19.9161C2.23581 13.1919 7.75139 7.50001 14.9987 7.5C10.8574 7.50001 7.50019 10.8579 7.50018 15Z" fill="url(#paint1_linear)"/>
-	  		    <path fillRule="evenodd" clipRule="evenodd" d="M26.2098 5.03217C23.4623 1.94478 19.4583 0 15 0C6.71573 0 0 6.71492 0 14.9982C0 17.7311 0.731057 20.2934 2.00831 22.5C1.92046 21.8868 1.875 21.26 1.875 20.6225C1.875 13.3746 7.75126 7.49909 15 7.49909C17.3286 7.4991 19.4093 8.56015 20.7849 10.2251C21.4752 10.9304 22.4359 11.3736 23.5 11.3736C25.5711 11.3736 27.25 9.6949 27.25 7.62408C27.25 6.80019 26.9842 6.03836 26.5338 5.41962C26.5092 5.37893 26.2937 5.11985 26.2098 5.03217Z" fill="url(#paint2_linear)"/>
-	  		    <defs>
-	  		    <linearGradient id="paint0_linear" x1="27.25" y1="15" x2="7.5" y2="15" gradientUnits="userSpaceOnUse">
-	  		    <stop stopOpacity="0.6"/>
-	  		    <stop offset="1" stopOpacity="0.1"/>
-	  		    </linearGradient>
-	  		    <linearGradient id="paint1_linear" x1="26.1978" y1="21.7984" x2="9.77471" y2="5.85375" gradientUnits="userSpaceOnUse">
-	  		    <stop stopOpacity="0.6"/>
-	  		    <stop offset="1" stopOpacity="0.1"/>
-	  		    </linearGradient>
-	  		    <linearGradient id="paint2_linear" x1="7.39301" y1="27.9041" x2="32.0275" y2="11.7154" gradientUnits="userSpaceOnUse">
-	  		    <stop stopOpacity="0.5"/>
-	  		    <stop offset="1" stopOpacity="0.1"/>
-	  		    </linearGradient>
-	  		    </defs>	
-	  		</svg>
+	  		<Link to="/">
+		  		<svg width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+		  		    <path fillRule="evenodd" clipRule="evenodd" d="M26.4762 24.6553C26.9615 24.0233 27.25 23.2323 27.25 22.3739C27.25 20.3029 25.5711 18.6241 23.5 18.6241C22.4013 18.6241 21.413 19.0966 20.7234 19.8463C19.3476 21.4689 17.2941 22.4989 15 22.4989C10.8581 22.4989 7.50034 19.1416 7.5 15C7.50035 22.248 13.1987 27.5708 19.4112 28.0688C19.9823 28.1146 21.032 28.1991 22.5027 27.9902C23.9146 27.2027 25.5412 25.8143 26.4762 24.6553Z" fill="url(#paint0_linear)"/>
+		  		    <path fillRule="evenodd" clipRule="evenodd" d="M7.50018 15C7.50018 22.2487 13.3753 28.125 20.6226 28.125C21.2601 28.125 21.8869 28.0795 22.5 27.9917C20.2935 29.2689 17.7315 30 14.9987 30C8.08243 30 3.68615 25.5264 2.00955 22.5025C1.86848 21.5601 1.85592 20.6331 1.89253 19.9161C2.23581 13.1919 7.75139 7.50001 14.9987 7.5C10.8574 7.50001 7.50019 10.8579 7.50018 15Z" fill="url(#paint1_linear)"/>
+		  		    <path fillRule="evenodd" clipRule="evenodd" d="M26.2098 5.03217C23.4623 1.94478 19.4583 0 15 0C6.71573 0 0 6.71492 0 14.9982C0 17.7311 0.731057 20.2934 2.00831 22.5C1.92046 21.8868 1.875 21.26 1.875 20.6225C1.875 13.3746 7.75126 7.49909 15 7.49909C17.3286 7.4991 19.4093 8.56015 20.7849 10.2251C21.4752 10.9304 22.4359 11.3736 23.5 11.3736C25.5711 11.3736 27.25 9.6949 27.25 7.62408C27.25 6.80019 26.9842 6.03836 26.5338 5.41962C26.5092 5.37893 26.2937 5.11985 26.2098 5.03217Z" fill="url(#paint2_linear)"/>
+		  		    <defs>
+		  		    <linearGradient id="paint0_linear" x1="27.25" y1="15" x2="7.5" y2="15" gradientUnits="userSpaceOnUse">
+		  		    <stop stopOpacity="0.6"/>
+		  		    <stop offset="1" stopOpacity="0.1"/>
+		  		    </linearGradient>
+		  		    <linearGradient id="paint1_linear" x1="26.1978" y1="21.7984" x2="9.77471" y2="5.85375" gradientUnits="userSpaceOnUse">
+		  		    <stop stopOpacity="0.6"/>
+		  		    <stop offset="1" stopOpacity="0.1"/>
+		  		    </linearGradient>
+		  		    <linearGradient id="paint2_linear" x1="7.39301" y1="27.9041" x2="32.0275" y2="11.7154" gradientUnits="userSpaceOnUse">
+		  		    <stop stopOpacity="0.5"/>
+		  		    <stop offset="1" stopOpacity="0.1"/>
+		  		    </linearGradient>
+		  		    </defs>	
+		  		</svg>
+	  		</Link>
 	  	</Logo>
 	  	<Links>
 	  		<List>

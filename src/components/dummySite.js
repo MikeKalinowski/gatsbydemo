@@ -96,8 +96,8 @@ const DummyGroupsWrapper = styled.div`
 const DummySite = ({ data }) => (
 	<DummyWrapper>
 	  	<Titles>
-	  		<StyledTitle titleText={data.contentfulBlog.blogTitle}></StyledTitle>
-	  		<Text>{data.contentfulBlog.blogText.blogText}</Text>
+	  		<StyledTitle titleText={data.contentfulDummy.dummyTitle}></StyledTitle>
+	  		<Text>{data.contentfulDummy.dummyText.dummyText}</Text>
 	  	</Titles>
 	  	<BottomWrapper>
 			<ImageWrapper>

@@ -68,7 +68,7 @@ const ShowYourWork = ({ data }) => (
       <Text>
         {data.contentfulHome.showYourWorkText2.showYourWorkText2}
       </Text>
-      <StyledGreenButton buttonText="READ MORE"/>
+      <StyledGreenButton buttonText="READ MORE" link="/blog/"/>
     </LeftWrapper>
     <RightWrapper>
       <AccordionsWrapper>

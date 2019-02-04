@@ -95,7 +95,7 @@ const OurWorkFlow = ({ data }) => (
   	<Text>
   		{data.contentfulHome.ourWorkFlowText.ourWorkFlowText} 
   	</Text>
-  	<StyledGreenButton buttonText="LEARN MORE"/>
+  	<StyledGreenButton buttonText="LEARN MORE" link="/blog/"/>
   </OurWorkFlowWrapper>
 )
 

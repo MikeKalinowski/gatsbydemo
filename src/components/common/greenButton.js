@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 const StyledGreenButton = styled.button`
@@ -28,10 +29,12 @@ const StyledGreenButton = styled.button`
 	}
 `
 
-const GreenButton = ({ className, buttonText }) => (
-	<StyledGreenButton className={className}>
-		{buttonText}
-	</StyledGreenButton>
+const GreenButton = ({ className, buttonText, link }) => (
+	<Link to={link}>
+		<StyledGreenButton className={className}>
+			{buttonText}
+		</StyledGreenButton>
+	</Link>
 )
 
 export default GreenButton

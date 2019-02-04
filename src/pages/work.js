@@ -7,21 +7,21 @@ import DummySite from '../components/dummySite'
 
 
 
-const BlogPage = ({ data }) => (
+const WorkPage = ({ data }) => (
   <Layout>
-    <SEO title="Blog" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="Work" keywords={[`gatsby`, `application`, `react`]} />
     <DummySite data={data} />
   </Layout>
 )
 
-export default BlogPage
+export default WorkPage
 
 export const query = graphql`
-	query BlogPageQuery {
-		contentfulDummy: contentfulBlog{
-		    dummyTitle: blogTitle
-	        dummyText: blogText {
-	          dummyText: blogText
+	query WorkPageQuery {
+		contentfulDummy: contentfulWork{
+		    dummyTitle: workTitle
+	        dummyText: workText {
+	          dummyText: workText
 	        }
 		}
 	  	allContentfulDummyGroup(sort: {fields: [createdAt], order: ASC}) {

@@ -44,10 +44,10 @@ const GreenSpan = styled.span`
 
 const CheckboxInput = styled.input` /*Checkbox that goes over hamburger icon*/
   position: absolute;
-  width: 24px;
-  height: 24px;
-  top: -2px;
-  left: -2px;
+  width: 34px;
+  height: 34px;
+  top: -8px;
+  left: -8px;
   cursor: pointer;
   opacity: 0;
   z-index: 3;
@@ -74,6 +74,7 @@ const Li = styled.li`
   padding: 12px 0;
   text-align: center;
   border-bottom: 1px solid ${props => props.theme.color.darkGray};
+  transition: all 0.2s;
 `
 
 const StyledLink = styled(Link)`
@@ -84,7 +85,10 @@ const StyledLink = styled(Link)`
   letter-spacing: 0.1px;
   color: inherit;
   :hover {
-    color: ${props => props.theme.color.accent};
+    color: white;
+  };
+  :hover li {
+    background-color: ${props => props.theme.color.accent};
   };
 `
 
@@ -97,7 +101,7 @@ const Header = ({ data }) => (
       <CheckboxInput type="checkbox" />
       <List>
         {data.allContentfulHeader.edges.map((edge, index) => (
-          <Li key={index}><StyledLink to={edge.node.linkUrl}>{edge.node.linkTitle}</StyledLink></Li>
+          <StyledLink to={edge.node.linkUrl} key={index}><Li>{edge.node.linkTitle}</Li></StyledLink>
           ))
         }
       </List>

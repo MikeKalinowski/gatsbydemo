@@ -86,7 +86,7 @@ const Footer = ({ data }) => (
         {data.contentfulHome.footerHelp}
         </Text>
     </TextWrapper>
-    <StyledGreenButton buttonText="CONTACT US"/>
+    <StyledGreenButton buttonText="CONTACT US" link="/about/"/>
   </FooterWrapper>
 )
 
