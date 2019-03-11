@@ -1,5 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
+import { InView } from 'react-intersection-observer'
 
 import BackgroundImage from './common/heroBackgroundImage.js'
 import { device } from './device'
@@ -18,6 +19,31 @@ const HeroInsideWrapper = styled.div`
   position: relative;
   height: 100%;
 `
+
+const AnimationWrapper = styled.div`
+  text-align: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  // Animation
+  ${props => props.scrolledIntoView && appearAnimationMixin};
+  opacity: 0;
+`
+
+
+const Curtain = styled.div` //For animation
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: white;
+  // Animation
+  ${props => props.scrolledIntoView && curtainAnimationMixin};
+`
+
 
 const PlayButtonIcon = styled.div`
   position: absolute;
@@ -117,12 +143,55 @@ const centerAbsolute = {
     right: 0
   }
 
+
+// ANIMATIONS
+
+const curtainAnimationMixin = props =>
+  css`
+    animation: ${curtainAnimation};
+    animation-duration: 2s;
+    animation-delay: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  `
+
+const curtainAnimation = keyframes`
+  0% {
+    height: 100%;
+  }
+  100% {
+    height: 0px;
+  }
+`
+
+const appearAnimationMixin = props =>
+  css`
+    animation: ${appearAnimation};
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  `
+
+const appearAnimation = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`
+
+
+//REACT
+
 class Hero extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      clicked: false
+      clicked: false,
+      scrolledIntoView: false
     }
   }
 
@@ -130,10 +199,17 @@ class Hero extends React.Component {
     this.setState({ clicked: !this.state.clicked });
   }
 
+  runAnimations = (inView) => {
+    (inView === true) && (this.setState({scrolledIntoView: true}));
+  }
+
   render() {
     return(
       <HeroWrapper>
+        <Curtain scrolledIntoView={this.state.scrolledIntoView} />
+        <InView as="span" triggerOnce="true" onChange={this.runAnimations} />
         <HeroInsideWrapper>
+          <AnimationWrapper scrolledIntoView={this.state.scrolledIntoView}>
           <PlayButtonIconLarge style={centerAbsolute}>
             <Svg onClick={this.handleClick} width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fillRule="evenodd" clipRule="evenodd" d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100Z" fill="white"/>
@@ -158,6 +234,7 @@ class Hero extends React.Component {
               <path fillRule="evenodd" clipRule="evenodd" d="M18.9289 0.735476L9.99543 10.7625C9.90001 10.916 9.72811 10.994 9.55027 10.9991C9.48343 11.0016 9.46717 11.0028 9.45059 10.9991C9.27264 10.994 9.10085 10.916 9.00531 10.7625L0.0714628 0.735476C-0.0758292 0.501452 0.0118468 0.200718 0.267515 0.0660937C0.522355 -0.0698043 0.848288 0.0107237 0.995925 0.244762L9.50004 9.7924L18.0055 0.244762C18.1525 0.0107237 18.4784 -0.0698043 18.7333 0.0660937C18.989 0.200718 19.0765 0.501452 18.9289 0.735476Z" fill="white" fillOpacity="0.5"/>
             </svg>
           </ArrowIcon>
+        </AnimationWrapper>
           <StyledBackgroundImage />
         </HeroInsideWrapper>
         {this.state.clicked ? <VideoPlayer handleClick={this.handleClick}/> : ""}

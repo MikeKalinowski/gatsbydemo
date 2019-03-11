@@ -1,5 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
+import { InView } from 'react-intersection-observer'
 
 import Title from './common/title'
 import Card from './common/card'
@@ -14,6 +15,11 @@ const OurOfferWrapper = styled.div`
   @media ${device.tablet} {
       padding: 300px 0px 0px 0px;
   }
+`
+
+const TextAnimationWrapper = styled.div`
+  opacity: 0;
+  ${props => props.scrolledIntoView && AnimationMixin(appearAnimation)};
 `
 
 const StyledTitle = styled(Title)`
@@ -47,18 +53,110 @@ const CardsWrapper = styled.div`
       }
     }
   }
+  //Animations
+  >div:nth-child(1) {
+    opacity: 0;
+    ${props => props.scrolledIntoView && AnimationMixin(slideLeftAnimation)};
+    animation-delay: 0.6s;
+  }
+  >div:nth-child(2) {
+    opacity: 0;
+    ${props => props.scrolledIntoView && AnimationMixin(slideBottomAnimation)};
+    animation-delay: 0.6s;
+  }
+  >div:nth-child(3) {
+    opacity: 0;
+    ${props => props.scrolledIntoView && AnimationMixin(slideRightAnimation)};
+    animation-delay: 0.6s;
+  }
 `
 
-const OurOffer = ({ data }) => (
-  <OurOfferWrapper>
-    <StyledTitle titleText="Our Offer"/>
-    <Text>
-      {data.contentfulHome.ourOfferText.ourOfferText}
-    </Text>
-    <CardsWrapper>
-      {data.allContentfulCards.edges.map((edge, index) => <Card title={edge.node.cardTitle} text={edge.node.cardText.cardText} icon={edge.node.cardIcon.cardIcon} key={index}/>)}
-    </CardsWrapper>
-  </OurOfferWrapper>
-)
+
+// ANIMATIONS
+
+const AnimationMixin = animation =>
+  css`
+    animation: ${animation};
+    animation-duration: 1.5s;
+    animation-delay: 0.1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  `
+
+const appearAnimation = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`
+
+const slideLeftAnimation = keyframes`
+  0% {
+    opacity: 0;
+    transform: translate3d(-50px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+`
+
+const slideBottomAnimation = keyframes`
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+`
+
+const slideRightAnimation = keyframes`
+  0% {
+    opacity: 0;
+    transform: translate3d(50px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+`
+
+
+//REACT
+
+class OurOffer extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      scrolledIntoView: false
+    }
+  }
+
+  runSlideAnimation = (inView) => {
+    (inView === true) && (this.setState({scrolledIntoView: true}));
+  }
+
+  render() {
+    return(
+      <OurOfferWrapper>
+        <TextAnimationWrapper scrolledIntoView={this.state.scrolledIntoView}>
+          <StyledTitle titleText="Our Offer"/>
+          <Text>
+            {this.props.data.contentfulHome.ourOfferText.ourOfferText}
+          </Text>
+        </TextAnimationWrapper>
+        <InView as="span" triggerOnce="true" onChange={this.runSlideAnimation} />
+        <CardsWrapper scrolledIntoView={this.state.scrolledIntoView}>
+          {this.props.data.allContentfulCards.edges.map((edge, index) => <Card title={edge.node.cardTitle} text={edge.node.cardText.cardText} icon={edge.node.cardIcon.cardIcon} key={index}/>)}
+        </CardsWrapper>
+      </OurOfferWrapper>
+    )
+  }
+}
 
 export default OurOffer
