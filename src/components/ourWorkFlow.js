@@ -38,7 +38,7 @@ const SmallTitle = styled.span`
   }
   // Animation
   opacity: 0;
-  ${props => props.scrolledIntoView && slideAnimationMixin};
+  ${props => props.scrolledIntoView && AnimationMixin(slideAnimation)};
 `
 
 const StyledTitle = styled(Title)`
@@ -47,7 +47,7 @@ const StyledTitle = styled(Title)`
   }
   // Animation
   opacity: 0;
-  ${props => props.scrolledIntoView && slideAnimationMixin};
+  ${props => props.scrolledIntoView && AnimationMixin(slideAnimation)};
 `
 
 const StyledOurWorkFlowImage = styled(OurWorkFlowImage)`
@@ -76,7 +76,7 @@ const Text = styled.span`
   }
   // Animation
   opacity: 0;
-  ${props => props.scrolledIntoView && slideAnimationMixin};
+  ${props => props.scrolledIntoView && AnimationMixin(slideAnimation)};
   animation-delay: 0.3s;
 `
 
@@ -96,16 +96,16 @@ const StyledGreenButton = styled(GreenButton)`
   }
   // Animation
   opacity: 0;
-  ${props => props.scrolledIntoView && slideAnimationMixin};
+  ${props => props.scrolledIntoView && AnimationMixin(slideAnimation)};
   animation-delay: 0.5s;
 `
 
 
 // ANIMATIONS
 
-const slideAnimationMixin = props =>
+const AnimationMixin = animation =>
   css`
-    animation: ${slideAnimation};
+    animation: ${animation};
     animation-duration: 1.5s;
     animation-delay: 0.1s;
     animation-fill-mode: forwards;
@@ -135,7 +135,7 @@ class OurWorkFlow extends React.Component {
     }
   }
 
-  runSlideAnimation = (inView) => {
+  runAnimations = (inView) => {
     (inView === true) && (this.setState({scrolledIntoView: true}));
   }
 
@@ -143,7 +143,7 @@ class OurWorkFlow extends React.Component {
     return(
       <OurWorkFlowWrapper>
         <SmallTitle scrolledIntoView={this.state.scrolledIntoView}>
-          <InView as="span" triggerOnce="true" onChange={this.runSlideAnimation} />
+          <InView as="span" triggerOnce="true" onChange={this.runAnimations} />
           BEST SERVICE
         </SmallTitle>
         <StyledTitle titleText="Our Work Flow" scrolledIntoView={this.state.scrolledIntoView}/>

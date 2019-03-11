@@ -27,8 +27,9 @@ const AnimationWrapper = styled.div`
   width: 100%;
   opacity: 0;
   // Animation
-  ${props => props.scrolledIntoView && appearAnimationMixin};
+  ${props => props.scrolledIntoView && AnimationMixin(appearAnimation)};
   opacity: 0;
+  animation-delay: 1s;
 `
 
 
@@ -41,7 +42,7 @@ const Curtain = styled.div` //For animation
   z-index: 2;
   background-color: white;
   // Animation
-  ${props => props.scrolledIntoView && curtainAnimationMixin};
+  ${props => props.scrolledIntoView && AnimationMixin(curtainAnimation)};
 `
 
 
@@ -146,9 +147,9 @@ const centerAbsolute = {
 
 // ANIMATIONS
 
-const curtainAnimationMixin = props =>
+const AnimationMixin = animation =>
   css`
-    animation: ${curtainAnimation};
+    animation: ${animation};
     animation-duration: 2s;
     animation-delay: 0.3s;
     animation-fill-mode: forwards;
@@ -163,15 +164,6 @@ const curtainAnimation = keyframes`
     height: 0px;
   }
 `
-
-const appearAnimationMixin = props =>
-  css`
-    animation: ${appearAnimation};
-    animation-duration: 2s;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
-  `
 
 const appearAnimation = keyframes`
   0% {

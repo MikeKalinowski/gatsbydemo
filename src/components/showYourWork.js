@@ -27,7 +27,7 @@ const LeftWrapper = styled.div`
   }
   // Animation
   opacity: 0;
-  ${props => props.scrolledIntoView && slideAnimationMixin};
+  ${props => props.scrolledIntoView && AnimationMixin(slideAnimation)};
 `
 
 const RightWrapper = styled.div`
@@ -36,7 +36,7 @@ const RightWrapper = styled.div`
   }
   // Animation
   opacity: 0;
-  ${props => props.scrolledIntoView && slideAnimationMixin};
+  ${props => props.scrolledIntoView && AnimationMixin(slideAnimation)};
   animation-delay: 0.4s; // Overwriting animation mixin
 `
 
@@ -72,9 +72,9 @@ const StyledGreenButton = styled(GreenButton)`
 
 // ANIMATIONS
 
-const slideAnimationMixin = props =>
+const AnimationMixin = animation =>
   css`
-    animation: ${slideAnimation};
+    animation: ${animation};
     animation-duration: 1.5s;
     animation-delay: 0.2s;
     animation-fill-mode: forwards;
@@ -104,7 +104,7 @@ class ShowYourWork extends React.Component {
     }
   }
 
-  runSlideAnimation = (inView) => {
+  runAnimations = (inView) => {
     (inView === true) && (this.setState({scrolledIntoView: true}));
   }
 
@@ -112,7 +112,7 @@ class ShowYourWork extends React.Component {
     return(
       <ShowYourWorkWrapper>
         <LeftWrapper scrolledIntoView={this.state.scrolledIntoView}>
-          <InView as="span" triggerOnce="true" onChange={this.runSlideAnimation} />
+          <InView as="span" triggerOnce="true" onChange={this.runAnimations} />
           <Title titleText="Show Your Work"/>
           <Text>
             {this.props.data.contentfulHome.showYourWorkText2.showYourWorkText2}
