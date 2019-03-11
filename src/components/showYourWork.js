@@ -1,5 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
+import { InView } from 'react-intersection-observer'
 
 import Title from './common/title'
 import GreenButton from './common/greenButton'
@@ -24,12 +25,19 @@ const LeftWrapper = styled.div`
       width: 43%;
       padding-right: 56px;
   }
+  // Animation
+  opacity: 0;
+  ${props => props.scrolledIntoView && slideAnimationMixin};
 `
 
 const RightWrapper = styled.div`
   @media ${device.tablet} {
       width: 57%;
   }
+  // Animation
+  opacity: 0;
+  ${props => props.scrolledIntoView && slideAnimationMixin};
+  animation-delay: 0.4s; // Overwriting animation mixin
 `
 
 const Text = styled.div`
@@ -61,21 +69,65 @@ const StyledGreenButton = styled(GreenButton)`
   }
 `
 
-const ShowYourWork = ({ data }) => (
-  <ShowYourWorkWrapper>
-    <LeftWrapper>
-      <Title titleText="Show Your Work"/>
-      <Text>
-        {data.contentfulHome.showYourWorkText2.showYourWorkText2}
-      </Text>
-      <StyledGreenButton buttonText="READ MORE" link="/blog/"/>
-    </LeftWrapper>
-    <RightWrapper>
-      <AccordionsWrapper>
-        {data.allContentfulAccordions.edges.map((edge, index) => <Accordion accordionTitle={edge.node.accordionTitle} accordionText={edge.node.accordionText.accordionText} accordionIcon={edge.node.accordionIcon.accordionIcon} key={index}/>)}
-      </AccordionsWrapper>
-    </RightWrapper>
-  </ShowYourWorkWrapper>
-)
+
+// ANIMATIONS
+
+const slideAnimationMixin = props =>
+  css`
+    animation: ${slideAnimation};
+    animation-duration: 1.5s;
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  `
+
+const slideAnimation = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+`
+
+
+//REACT
+
+class ShowYourWork extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      scrolledIntoView: false
+    }
+  }
+
+  runSlideAnimation = (inView) => {
+    (inView === true) && (this.setState({scrolledIntoView: true}));
+  }
+
+  render() {
+    return(
+      <ShowYourWorkWrapper>
+        <LeftWrapper scrolledIntoView={this.state.scrolledIntoView}>
+          <InView as="span" triggerOnce="true" onChange={this.runSlideAnimation} />
+          <Title titleText="Show Your Work"/>
+          <Text>
+            {this.props.data.contentfulHome.showYourWorkText2.showYourWorkText2}
+          </Text>
+          <StyledGreenButton buttonText="READ MORE" link="/blog/"/>
+        </LeftWrapper>
+        <RightWrapper scrolledIntoView={this.state.scrolledIntoView}>
+          <AccordionsWrapper>
+            {this.props.data.allContentfulAccordions.edges.map((edge, index) => <Accordion accordionTitle={edge.node.accordionTitle} accordionText={edge.node.accordionText.accordionText} accordionIcon={edge.node.accordionIcon.accordionIcon} key={index}/>)}
+          </AccordionsWrapper>
+        </RightWrapper>
+      </ShowYourWorkWrapper>
+    )
+  }
+
+}
 
 export default ShowYourWork

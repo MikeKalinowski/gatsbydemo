@@ -1,5 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
+import { InView } from 'react-intersection-observer'
 
 import Title from './common/title'
 import GreenButton from './common/greenButton'
@@ -35,12 +36,18 @@ const SmallTitle = styled.span`
       grid-column: 2;
       align-self: end
   }
+  // Animation
+  opacity: 0;
+  ${props => props.scrolledIntoView && slideAnimationMixin};
 `
 
 const StyledTitle = styled(Title)`
   @media ${device.tablet} {
     grid-column: 2;
-}
+  }
+  // Animation
+  opacity: 0;
+  ${props => props.scrolledIntoView && slideAnimationMixin};
 `
 
 const StyledOurWorkFlowImage = styled(OurWorkFlowImage)`
@@ -67,6 +74,10 @@ const Text = styled.span`
   @media ${device.tablet} {
       grid-column: 2;
   }
+  // Animation
+  opacity: 0;
+  ${props => props.scrolledIntoView && slideAnimationMixin};
+  animation-delay: 0.3s;
 `
 
 const StyledGreenButton = styled(GreenButton)`
@@ -83,20 +94,67 @@ const StyledGreenButton = styled(GreenButton)`
     transform: translateY(-3px);
     color: ${props => props.theme.color.accent};;
   }
+  // Animation
+  opacity: 0;
+  ${props => props.scrolledIntoView && slideAnimationMixin};
+  animation-delay: 0.5s;
 `
 
-const OurWorkFlow = ({ data }) => (
-  <OurWorkFlowWrapper>
-  	<SmallTitle>
-  		BEST SERVICE
-  	</SmallTitle>
-  	<StyledTitle titleText="Our Work Flow"/>
-  	<StyledOurWorkFlowImage />
-  	<Text>
-  		{data.contentfulHome.ourWorkFlowText.ourWorkFlowText} 
-  	</Text>
-  	<StyledGreenButton buttonText="LEARN MORE" link="/blog/"/>
-  </OurWorkFlowWrapper>
-)
+
+// ANIMATIONS
+
+const slideAnimationMixin = props =>
+  css`
+    animation: ${slideAnimation};
+    animation-duration: 1.5s;
+    animation-delay: 0.1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  `
+
+const slideAnimation = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+`
+
+
+//REACT
+
+class OurWorkFlow extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      scrolledIntoView: false
+    }
+  }
+
+  runSlideAnimation = (inView) => {
+    (inView === true) && (this.setState({scrolledIntoView: true}));
+  }
+
+  render() {
+    return(
+      <OurWorkFlowWrapper>
+        <SmallTitle scrolledIntoView={this.state.scrolledIntoView}>
+          <InView as="span" triggerOnce="true" onChange={this.runSlideAnimation} />
+          BEST SERVICE
+        </SmallTitle>
+        <StyledTitle titleText="Our Work Flow" scrolledIntoView={this.state.scrolledIntoView}/>
+        <StyledOurWorkFlowImage />
+        <Text scrolledIntoView={this.state.scrolledIntoView}>
+          {this.props.data.contentfulHome.ourWorkFlowText.ourWorkFlowText} 
+        </Text>
+        <StyledGreenButton buttonText="LEARN MORE" link="/blog/" scrolledIntoView={this.state.scrolledIntoView}/>
+      </OurWorkFlowWrapper>
+    )
+  }
+}
 
 export default OurWorkFlow
