@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { device } from '../device'
 
-const HeaderWrapper = styled.div`
+const HeaderWrapper = styled.header`
 	background: white;
 	height: ${props => props.theme.layout.navHeightDesktop};
 	width: 100%;
@@ -30,7 +30,7 @@ const Logo = styled.div`
 	display: inline-block;
 `
 
-const Links = styled.div`
+const Links = styled.nav`
 	display: inline-block;
 	position: absolute;
 	left: 50%;

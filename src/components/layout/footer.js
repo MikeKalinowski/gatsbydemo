@@ -5,7 +5,7 @@ import Title from '../common/title'
 import GreenButton from '../common/greenButton'
 import { device } from '../device'
 
-const FooterWrapper = styled.div`
+const FooterWrapper = styled.footer`
     padding: ${props => props.theme.layout.wrapperPaddingMobile};
     position: relative;
     max-width: ${props => props.theme.layout.contentWidthDesktop};

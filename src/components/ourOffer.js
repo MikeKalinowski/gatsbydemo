@@ -6,7 +6,7 @@ import Title from './common/title'
 import Card from './common/card'
 import { device } from './device'
 
-const OurOfferWrapper = styled.div`
+const OurOfferWrapper = styled.section`
 	padding: ${props => props.theme.layout.wrapperPaddingMobile};
   position: relative;
   max-width: ${props => props.theme.layout.contentWidthDesktop};
@@ -57,17 +57,17 @@ const CardsWrapper = styled.div`
   >div:nth-child(1) {
     opacity: 0;
     ${props => props.scrolledIntoView && AnimationMixin(slideLeftAnimation)};
-    animation-delay: 0.6s;
+    animation-delay: 0.4s;
   }
   >div:nth-child(2) {
     opacity: 0;
     ${props => props.scrolledIntoView && AnimationMixin(slideBottomAnimation)};
-    animation-delay: 0.6s;
+    animation-delay: 0.4s;
   }
   >div:nth-child(3) {
     opacity: 0;
     ${props => props.scrolledIntoView && AnimationMixin(slideRightAnimation)};
-    animation-delay: 0.6s;
+    animation-delay: 0.4s;
   }
 `
 
@@ -77,8 +77,7 @@ const CardsWrapper = styled.div`
 const AnimationMixin = animation =>
   css`
     animation: ${animation};
-    animation-duration: 1.5s;
-    animation-delay: 0.1s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
   `

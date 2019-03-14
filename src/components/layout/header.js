@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { device } from '../device'
 
-const HeaderWrapper = styled.div`
+const HeaderWrapper = styled.header`
   background: white;
   height: ${props => props.theme.layout.navHeightMobile};
   width: 100%;
@@ -28,7 +28,7 @@ const StyledLink2 = styled(Link)`
   color: ${props => props.theme.color.darkGray};
 `
 
-const IconDiv = styled.div`
+const IconDiv = styled.nav`
   position: relative;
 `
 

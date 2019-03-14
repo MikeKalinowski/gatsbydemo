@@ -7,7 +7,7 @@ import GreenButton from './common/greenButton'
 import Accordion from './common/accordion'
 import { device } from './device'
 
-const ShowYourWorkWrapper = styled.div`
+const ShowYourWorkWrapper = styled.section`
   position: relative;
   padding: ${props => props.theme.layout.wrapperPaddingMobile};
   max-width: ${props => props.theme.layout.contentWidthDesktop};
@@ -37,7 +37,7 @@ const RightWrapper = styled.div`
   // Animation
   opacity: 0;
   ${props => props.scrolledIntoView && AnimationMixin(slideAnimation)};
-  animation-delay: 0.4s; // Overwriting animation mixin
+  animation-delay: 0.3s; // Overwriting animation mixin
 `
 
 const Text = styled.div`
@@ -76,7 +76,6 @@ const AnimationMixin = animation =>
   css`
     animation: ${animation};
     animation-duration: 1.5s;
-    animation-delay: 0.2s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
   `

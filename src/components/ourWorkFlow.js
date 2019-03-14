@@ -7,7 +7,7 @@ import GreenButton from './common/greenButton'
 import OurWorkFlowImage from './common/ourWorkFlowImage.js'
 import { device } from './device'
 
-const OurWorkFlowWrapper = styled.div`
+const OurWorkFlowWrapper = styled.section`
   padding: ${props => props.theme.layout.wrapperPaddingMobile};
   position: relative;
   max-width: ${props => props.theme.layout.contentWidthDesktop};
