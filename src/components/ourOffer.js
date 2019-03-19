@@ -1,7 +1,6 @@
 import React from 'react'
 import styled, { css, keyframes } from 'styled-components'
 import { InView } from 'react-intersection-observer'
-import 'intersection-observer'
 
 import Title from './common/title'
 import Card from './common/card'

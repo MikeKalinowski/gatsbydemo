@@ -1,7 +1,6 @@
 import React from 'react'
 import styled, { css, keyframes } from 'styled-components'
 import { InView } from 'react-intersection-observer'
-import 'intersection-observer'
 
 import BackgroundImage from './common/heroBackgroundImage.js'
 import { device } from './device'
