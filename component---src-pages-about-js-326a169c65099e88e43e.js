@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{138:function(a,e,t){"use strict";t.r(e),t.d(e,"query",function(){return i});var n=t(0),r=t.n(n),c=t(151),u=t(150),o=t(161);e.default=function(a){var e=a.data;return r.a.createElement(c.a,null,r.a.createElement(u.a,{title:"About",keywords:["gatsby","application","react"]}),r.a.createElement(o.a,{data:e}))};var i="999704003"}}]);
+//# sourceMappingURL=component---src-pages-about-js-326a169c65099e88e43e.js.map

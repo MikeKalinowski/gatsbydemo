@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{141:function(a,e,t){"use strict";t.r(e),t.d(e,"query",function(){return i});var n=t(0),r=t.n(n),c=t(151),o=t(150),u=t(161);e.default=function(a){var e=a.data;return r.a.createElement(c.a,null,r.a.createElement(o.a,{title:"Work",keywords:["gatsby","application","react"]}),r.a.createElement(u.a,{data:e}))};var i="3576853427"}}]);
+//# sourceMappingURL=component---src-pages-work-js-a85a6feb952e59ebf24e.js.map

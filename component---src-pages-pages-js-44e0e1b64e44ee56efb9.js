@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{140:function(a,e,t){"use strict";t.r(e),t.d(e,"query",function(){return o});var n=t(0),r=t.n(n),c=t(151),u=t(150),i=t(161);e.default=function(a){var e=a.data;return r.a.createElement(c.a,null,r.a.createElement(u.a,{title:"Pages",keywords:["gatsby","application","react"]}),r.a.createElement(i.a,{data:e}))};var o="2257190307"}}]);
+//# sourceMappingURL=component---src-pages-pages-js-44e0e1b64e44ee56efb9.js.map
